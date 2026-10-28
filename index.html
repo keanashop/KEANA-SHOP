@@ -203,7 +203,7 @@ header {
   display:flex;
   width:max-content;
   gap:16px;
-  animation:museumScroll 00s linear infinite;
+  animation:museumScroll 35s linear infinite;
 }
 .museum:hover .museum-track { animation-play-state:paused; }
 .museum:focus-within .museum-track { animation-play-state:paused; }
@@ -707,10 +707,8 @@ window.addEventListener("load", () => {
 
 // Nouvelle tentative lors de la première interaction si le navigateur l'a bloquée.
 document.addEventListener("pointerdown", function firstInteraction() {
-  if (music.paused) {
-    startMusic();
-  }
-}, { once: true, capture: true });
+  if (music.paused) startMusic();
+}, { once:true });
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
