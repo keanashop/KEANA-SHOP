@@ -705,10 +705,14 @@ window.addEventListener("load", () => {
   startMusic();
 });
 
-// Nouvelle tentative lors de la première interaction si le navigateur l'a bloquée.
-document.addEventListener("pointerdown", function firstInteraction() {
-  if (music.paused) startMusic();
-}, { once:true });
+// Démarrer la musique au premier toucher de la page.
+document.addEventListener("pointerdown", function firstInteraction(event) {
+  if (event.target.closest("#musicButton")) return;
+
+  if (music.paused) {
+    startMusic();
+  }
+}, { once: true, capture: true });
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
