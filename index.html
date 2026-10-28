@@ -2,105 +2,926 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101010">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+
   <title>KEANA SHOP | Mode masculine</title>
+
+  <meta name="description"
+        content="Découvrez les chemises et tuniques élégantes de KEANA SHOP. Commandez facilement sur WhatsApp.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
   <style>
-    :root{--green:#111111;--green2:#242424;--burgundy:#741d32;--gold:#c9a45c;--ivory:#fffaf0;--cream:#f4ead7;--ink:#211f1b;--muted:#706b62;--panel:#ffffff}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:var(--ivory);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
-    a{color:inherit;text-decoration:none} button,input,select{font:inherit}
-    .topbar{padding:10px 16px;text-align:center;background:#111111;color:var(--gold);font-size:12px;letter-spacing:1.4px;border-bottom:1px solid #e6d7b8}
-    header{position:sticky;top:0;z-index:5;background:rgba(17,17,17,.98);border-bottom:1px solid #c9a45c;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 3px 18px #00000018}
-    .brand{font-family:Georgia,serif;font-size:24px;letter-spacing:3px;color:var(--gold);font-weight:bold}
-    .brand small{display:block;font-family:Arial,sans-serif;font-size:9px;letter-spacing:5px;text-align:center;color:var(--gold)}
-    nav{display:flex;gap:18px;font-size:13px} nav a{color:#fff8e9} nav a:hover{color:var(--gold)}
-    .cartbtn,.goldbtn{background:linear-gradient(135deg,#f0d58b,#c9a45c);color:#111111;border:0;padding:12px 16px;font-weight:bold;cursor:pointer;border-radius:24px;box-shadow:0 5px 12px #8b641c20;transition:transform .2s,filter .2s}.goldbtn:hover,.cartbtn:hover{transform:translateY(-2px);filter:brightness(1.04)}
-    .hero{min-height:480px;display:flex;align-items:center;padding:60px 7%;background:linear-gradient(90deg,rgba(10,10,10,.92),rgba(10,10,10,.60) 48%,rgba(10,10,10,.12)),url('photos/chemise-bordeaux.png') center 35%/cover}
-    .hero-content{max-width:540px}.eyebrow{color:#f2cd75;letter-spacing:3px;text-transform:uppercase;font-size:11px}
-    h1{font-family:Georgia,serif;font-weight:normal;font-size:clamp(40px,7vw,70px);line-height:1.04;margin:18px 0}
-    h1 span{color:var(--gold);font-style:italic}.hero p{line-height:1.8;color:#eee;max-width:430px}
-    section{padding:55px 5%}.section-head{text-align:center;margin:0 auto 28px}.section-head h2{font-family:Georgia,serif;font-size:34px;font-weight:normal;margin:8px 0}.section-head p{color:var(--muted);font-size:14px}
-    .filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:24px}.filters input{max-width:300px;width:100%;background:#fff;border:1px solid #dfd1b6;color:var(--ink);padding:12px;border-radius:24px}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1200px;margin:auto}
-    .card{background:var(--panel);border:1px solid #e8dcc5;overflow:hidden;border-radius:14px;box-shadow:0 8px 24px #143c2d0b;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:0 14px 28px #143c2d18}.card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--cream)}
-    .cardbody{padding:16px}.ref{font-size:10px;color:#8b6a2e;letter-spacing:1.5px}.card h3{font-size:16px;margin:8px 0}.price{color:#8b6a2e;font-size:18px;font-weight:bold}
-    .card label{display:block;color:var(--muted);font-size:12px;margin:12px 0 6px}.card select,.card input{width:100%;padding:10px;background:#fff;border:1px solid #dfd1b6;border-radius:7px;color:var(--ink)}
-    .card .goldbtn{width:100%;margin-top:12px}.info{background:linear-gradient(135deg,#f7efdf,#fffaf0);color:var(--ink);text-align:center;padding:34px 6%;border-top:1px solid #e8dcc5;border-bottom:1px solid #e8dcc5}.info h2{font-family:Georgia,serif;font-weight:normal;font-size:29px}.info p{line-height:1.7}
-    footer{padding:28px 5%;text-align:center;color:#fff8e9;background:#111111;font-size:12px;border-top:3px solid var(--gold)}.gold{color:var(--gold)}
-    .cartbox{display:none;max-width:700px;margin:24px auto 0;border:1px solid #d4b15f;border-radius:12px;padding:18px;background:#fffdf8;color:var(--ink);box-shadow:0 8px 24px #143c2d12}.cartbox.open{display:block}.cartline{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #e8dcc5;font-size:14px}.cart-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .note{font-size:12px;color:var(--muted);line-height:1.6}
-    @media(max-width:760px){header{flex-wrap:wrap}nav{order:3;width:100%;justify-content:center;gap:14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cardbody{padding:11px}.card h3{font-size:14px}.hero{min-height:430px;padding:45px 6%}.brand{font-size:21px}}
-    @media(max-width:420px){.grid{grid-template-columns:1fr}.card img{aspect-ratio:4/3}.cartbtn{padding:10px}.section-head h2{font-size:29px}}
+    :root {
+      --black: #111111;
+      --black-light: #1c1c1c;
+      --gold: #c9a45c;
+      --gold-light: #e8d09a;
+      --ivory: #fffaf0;
+      --cream: #f5efe3;
+      --text: #252525;
+      --muted: #777;
+      --white: #fff;
+      --danger: #a52929;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .announcement {
+      background: var(--gold);
+      color: var(--black);
+      text-align: center;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background: var(--black);
+      color: var(--white);
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(201,164,92,.4);
+    }
+
+    .logo {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .cart-button {
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      padding: 65px 7%;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.32)),
+        url('photos/banniere-chemise-bordeaux.png') center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 560px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.13;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 450px;
+      color: #eee;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .primary-button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 13px 22px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .primary-button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 65px 5%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading .eyebrow {
+      color: #98742d;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      color: var(--black);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-button {
+      padding: 9px 16px;
+      border: 1px solid #d6c8aa;
+      border-radius: 30px;
+      background: transparent;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .filter-button.active,
+    .filter-button:hover {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--gold);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid #eee5d6;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.08);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      background: #eee8de;
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .category-badge {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      padding: 5px 8px;
+      background: rgba(17,17,17,.88);
+      color: var(--gold-light);
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 3px;
+    }
+
+    .stock-badge {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      padding: 5px 8px;
+      background: var(--white);
+      color: var(--text);
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 3px;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .product-price {
+      color: #8a6727;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .product-info label,
+    .cart-item label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      margin: 10px 0 5px;
+    }
+
+    .product-info select {
+      width: 100%;
+      padding: 9px;
+      border: 1px solid #ddd1bc;
+      border-radius: 4px;
+      background: var(--ivory);
+      color: var(--text);
+    }
+
+    .add-button {
+      width: 100%;
+      margin-top: 12px;
+      padding: 11px;
+      background: var(--black);
+      color: var(--gold);
+      border: 1px solid var(--black);
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .add-button:hover:not(:disabled) {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+
+    .add-button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .status-message {
+      text-align: center;
+      padding: 30px 15px;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    .status-message.error {
+      color: var(--danger);
+    }
+
+    .benefits {
+      background: var(--black);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      padding: 40px 6%;
+      text-align: center;
+    }
+
+    .benefit-icon {
+      color: var(--gold);
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .benefits h3 {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .benefits p {
+      color: #ccc;
+      font-size: 12px;
+    }
+
+    .contact-section {
+      text-align: center;
+      background: var(--cream);
+    }
+
+    .contact-section p {
+      max-width: 550px;
+      margin: 12px auto 24px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      background: #168b50;
+      color: white;
+      padding: 13px 22px;
+      border-radius: 4px;
+      font-weight: 800;
+    }
+
+    footer {
+      background: var(--black);
+      color: #ddd;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 12px;
+    }
+
+    footer .logo {
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    .music-button {
+      position: fixed;
+      left: 15px;
+      bottom: 15px;
+      z-index: 70;
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      padding: 11px 14px;
+      background: var(--black);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 3px 12px rgba(0,0,0,.2);
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      z-index: 90;
+      display: none;
+    }
+
+    .cart-overlay.open {
+      display: block;
+    }
+
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(440px, 100%);
+      height: 100%;
+      background: var(--ivory);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      transition: right .25s;
+      box-shadow: -5px 0 25px rgba(0,0,0,.15);
+    }
+
+    .cart-panel.open {
+      right: 0;
+    }
+
+    .cart-header {
+      padding: 18px;
+      background: var(--black);
+      color: var(--gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-header h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .close-cart {
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+    }
+
+    .cart-items {
+      padding: 15px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 45px 15px;
+      color: var(--muted);
+    }
+
+    .cart-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #e5dac7;
+    }
+
+    .cart-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+    }
+
+    .cart-item p {
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quantity-button {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #d7c8ad;
+      background: white;
+      border-radius: 4px;
+    }
+
+    .remove-button {
+      border: none;
+      background: transparent;
+      color: var(--danger);
+      font-size: 12px;
+      margin-left: auto;
+    }
+
+    .cart-footer {
+      border-top: 1px solid #ddd0bb;
+      padding: 18px;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .checkout-button {
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      padding: 14px;
+      background: #168b50;
+      color: white;
+      font-weight: 800;
+    }
+
+    .checkout-button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .checkout-note {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 1000px) {
+      .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 12px 4%;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: 480px;
+        padding: 55px 6%;
+        background-position: 58% center;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .section {
+        padding: 48px 4%;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-info {
+        padding: 11px;
+      }
+
+      .product-info h3 {
+        font-size: 15px;
+      }
+
+      .product-price {
+        font-size: 15px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div class="topbar">L'ÉLÉGANCE MASCULINE • ABIDJAN, CÔTE D'IVOIRE</div>
+
+  <div class="announcement">
+    KEANA SHOP — L'ÉLÉGANCE AU MASCULIN
+  </div>
+
   <header>
-    <a class="brand" href="#">KEANA <small>SHOP</small></a>
-    <nav><a href="#accueil">Accueil</a><a href="#boutique">Boutique</a><a href="#contact">Contact</a></nav>
-    <button class="cartbtn" onclick="toggleCart()">Panier (<span id="cart-count">0</span>)</button>
+    <a class="logo" href="#accueil">KEANA SHOP</a>
+
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-button" onclick="openCart()">
+      Panier (<span id="cart-count">0</span>)
+    </button>
   </header>
+
   <main>
     <section class="hero" id="accueil">
       <div class="hero-content">
-        <div class="eyebrow">Style • Confiance • Distinction</div>
-        <h1>KEANA SHOP<br><span>L’élégance au masculin.</span></h1>
-        <p>Des chemises qui vous distinguent. Découvrez nos modèles pour affirmer votre style avec élégance, au quotidien comme lors des grandes occasions.</p>
-        <a class="goldbtn" href="#boutique" style="display:inline-block;margin-top:12px">DÉCOUVRIR LA COLLECTION</a>
+        <div class="eyebrow">Style • Qualité • Élégance</div>
+
+        <h1>
+          L'élégance<br>
+          commence par <span>vous.</span>
+        </h1>
+
+        <p>
+          Découvrez notre sélection de chemises et de tuniques
+          masculines pour affirmer votre style en toute occasion.
+        </p>
+
+        <a href="#boutique" class="primary-button">
+          Découvrir la collection
+        </a>
       </div>
     </section>
-    <section id="boutique">
-      <div class="section-head"><div class="eyebrow">La sélection KEANA</div><h2>Nos chemises</h2><p>Des pièces élégantes pour affirmer votre style.</p></div>
-      <div class="filters"><input id="search" type="search" placeholder="Rechercher un vêtement…" oninput="renderProducts()"></div>
-      <div class="grid" id="products"></div>
-      <div class="cartbox" id="cartbox"><h2 class="gold" style="font-family:Georgia,serif;font-weight:normal">Votre panier</h2><div id="cart-items"></div><p><strong>Total : <span id="cart-total">0</span> FCFA</strong></p><label for="customer-name">Votre nom</label><input id="customer-name" placeholder="Nom et prénom" style="width:100%;padding:11px;background:#fff;color:var(--ink);border:1px solid #dfd1b6;margin:5px 0 12px"><label for="customer-location">Commune / lieu de livraison</label><input id="customer-location" placeholder="Ex. Cocody, Abidjan" style="width:100%;padding:11px;background:#fff;color:var(--ink);border:1px solid #dfd1b6;margin:5px 0 12px"><div class="cart-actions"><button class="goldbtn" onclick="sendWhatsApp()">Commander sur WhatsApp</button><button onclick="clearCart()" style="background:transparent;color:#111111;border:1px solid #c5ad7b;padding:12px;cursor:pointer">Vider le panier</button></div><p class="note">La commande sera préparée dans WhatsApp. Elle ne sera pas enregistrée dans une base de données tant que le système de commande sécurisé ne sera pas configuré.</p></div>
+
+    <section class="section" id="boutique">
+      <div class="section-heading">
+        <div class="eyebrow">Notre sélection</div>
+        <h2>La boutique</h2>
+        <p>Choisissez votre modèle, votre taille et ajoutez-le au panier.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter-button active"
+                data-category="Tous"
+                onclick="filterProducts('Tous', this)">
+          Tout voir
+        </button>
+
+        <button class="filter-button"
+                data-category="Chemise"
+                onclick="filterProducts('Chemise', this)">
+          Chemises
+        </button>
+
+        <button class="filter-button"
+                data-category="Tunique"
+                onclick="filterProducts('Tunique', this)">
+          Tuniques
+        </button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <div class="status-message">
+          Chargement de la collection...
+        </div>
+      </div>
     </section>
-    <section class="info" id="contact"><div class="eyebrow">KEANA SHOP</div><h2>Le détail fait la différence.</h2><p>Une question sur une taille ou un modèle ? Contactez-nous sur WhatsApp pour vérifier la disponibilité avant votre commande.</p><a class="goldbtn" href="https://wa.me/2250702004038" target="_blank" rel="noopener">NOUS CONTACTER SUR WHATSAPP</a></section>
+
+    <section class="benefits">
+      <div>
+        <div class="benefit-icon">✦</div>
+        <h3>Style et élégance</h3>
+        <p>Des vêtements pour affirmer votre personnalité.</p>
+      </div>
+
+      <div>
+        <div class="benefit-icon">◆</div>
+        <h3>Commande simple</h3>
+        <p>Préparez votre panier et commandez par WhatsApp.</p>
+      </div>
+
+      <div>
+        <div class="benefit-icon">✓</div>
+        <h3>Service client</h3>
+        <p>Contactez-nous pour vos questions sur les articles.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading">
+        <div class="eyebrow">Restons en contact</div>
+        <h2>Besoin d'aide ?</h2>
+      </div>
+
+      <p>
+        Une question sur une chemise, une tunique ou une taille ?
+        Écrivez-nous directement sur WhatsApp.
+      </p>
+
+      <a class="whatsapp-button"
+         href="https://wa.me/2250702004038"
+         target="_blank"
+         rel="noopener">
+        Nous contacter sur WhatsApp
+      </a>
+    </section>
   </main>
-  <footer>© <span id="year"></span> KEANA SHOP — Mode masculine avec distinction.</footer>
-<script>
-const WHATSAPP_NUMBER = "2250702004038";
-const products = [
- {id:"KS001",name:"Chemise bordeaux à motifs",price:9000,sizes:["L","XL","XXL"],stock:5,image:"photos/chemise-bordeaux.png"},
- {id:"KS002",name:"Chemise bleu ciel à détails noirs",price:9000,sizes:["M","L","XL"],stock:5,image:"photos/chemise-bleu-ciel.png"},
- {id:"KS003",name:"Chemise rayée bleu marine et blanche",price:9000,sizes:["L","XL","XXL"],stock:5,image:"photos/chemise-rayee.png"}
-];
-let cart=[];
-const money=n=>new Intl.NumberFormat("fr-FR").format(n);
-function renderProducts(){
- const q=(document.getElementById("search").value||"").toLowerCase();
- document.getElementById("products").innerHTML=products.filter(p=>(p.name+" "+p.id).toLowerCase().includes(q)).map(p=>`
- <article class="card"><img src="${p.image}" alt="${p.name}" loading="lazy"><div class="cardbody"><div class="ref">${p.id} · STOCK INITIAL ${p.stock}</div><h3>${p.name}</h3><div class="price">${money(p.price)} FCFA</div><label for="size-${p.id}">Taille</label><select id="size-${p.id}">${p.sizes.map(s=>`<option>${s}</option>`).join("")}</select><label for="qty-${p.id}">Quantité (max. ${p.stock})</label><input id="qty-${p.id}" type="number" min="1" max="${p.stock}" value="1"><button class="goldbtn" onclick="addToCart('${p.id}')">AJOUTER AU PANIER</button></div></article>`).join("");
-}
-function addToCart(id){
- const p=products.find(x=>x.id===id), size=document.getElementById("size-"+id).value;
- const qty=Number(document.getElementById("qty-"+id).value);
- if(!Number.isInteger(qty)||qty<1||qty>p.stock){alert("Quantité invalide ou supérieure au stock affiché.");return;}
- const existing=cart.find(x=>x.id===id&&x.size===size);
- if(existing){if(existing.qty+qty>p.stock){alert("La quantité dépasse le stock affiché.");return;}existing.qty+=qty;}
- else cart.push({id:p.id,name:p.name,price:p.price,size,qty});
- updateCart();document.getElementById("cartbox").classList.add("open");
-}
-function updateCart(){
- document.getElementById("cart-count").textContent=cart.reduce((s,x)=>s+x.qty,0);
- document.getElementById("cart-items").innerHTML=cart.length?cart.map((x,i)=>`<div class="cartline"><span>${x.name} — ${x.size} × ${x.qty}</span><span>${money(x.price*x.qty)} FCFA <button onclick="removeItem(${i})" aria-label="Supprimer" style="background:none;border:0;color:var(--burgundy);cursor:pointer">✕</button></span></div>`).join(""):"<p>Votre panier est vide.</p>";
- document.getElementById("cart-total").textContent=money(cart.reduce((s,x)=>s+x.price*x.qty,0));
-}
-function removeItem(i){cart.splice(i,1);updateCart()}
-function toggleCart(){document.getElementById("cartbox").classList.toggle("open");document.getElementById("cartbox").scrollIntoView({behavior:"smooth",block:"center"})}
-function clearCart(){cart=[];updateCart()}
-function sendWhatsApp(){
- if(!cart.length){alert("Ajoutez d'abord un article au panier.");return;}
- const name=document.getElementById("customer-name").value.trim(), location=document.getElementById("customer-location").value.trim();
- if(!name||!location){alert("Veuillez renseigner votre nom et votre lieu de livraison.");return;}
- const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
- const lines=cart.map(x=>`- ${x.name} (${x.id}), taille ${x.size}, quantité ${x.qty} : ${money(x.price*x.qty)} FCFA`).join("\\n");
- const msg=`Bonjour KEANA SHOP, je souhaite passer commande :\\n\\n${lines}\\n\\nTotal articles : ${money(total)} FCFA\\nNom : ${name}\\nLieu de livraison : ${location}\\n\\nMerci de confirmer la disponibilité et les frais de livraison.`;
- window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
-}
-document.getElementById("year").textContent=new Date().getFullYear();
-renderProducts();updateCart();
-</script>
-</body>
-</html>
+
+  <footer>
+    <div class="logo">KEANA SHOP</div>
+    <p>L'élégance au masculin.</p>
+    <p>© <span id="year"></span> KEANA SHOP — Tous droits réservés.</p>
+  </footer>
+
+  <audio id="background-music" loop preload="none">
+    <source src="photos/musique%20KEANA%20SHOP.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-button"
+          id="music-button"
+          onclick="toggleMusic()">
+    ♫ Activer la musique
+  </button>
+
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+
+  <aside class="cart-panel" id="cart-panel" aria-label="Votre panier">
+    <div class="cart-header">
+      <h2>Votre panier</h2>
+      <button class="close-cart"
+              aria-label="Fermer le panier"
+              onclick="closeCart()">×</button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+      <div class="empty-cart">Votre panier est vide.</div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total">0 FCFA</span>
+      </div>
+
+      <button class="checkout-button"
+              id="checkout-button"
+              onclick="checkout()"
+              disabled>
+        Commander sur WhatsApp
+      </button>
+
+      <p class="checkout-note">
+        La commande sera envoyée sur WhatsApp pour confirmation.
+      </p>
+    </div>
+  </aside>
+
+  <script>
+    // =====================================================
+    // CONFIGURATION SUPABASE
+    // =====================================================
+
+    const SUPABASE_URL = "https://zwuvwuchiwpledasygqy.supabase.co";
+
+    const SUPABASE_KEY = "sb_publishable_eXsqM7Cl-QHxScR_LE4Yeg_O-V-PS1N";
+
+    const TABLE_NAME = "Produits";
+
+    const WHATSAPP_NUMBER = "2250702004038";
+
+    // =====================================================
+    // VARIABLES
+    // =====================================================
+
+    let products = [];
+    let cart = [];
+    let currentCategory = "Tous";
+
+    const productsGrid = document.getElementById("products-grid");
+    const cartPanel = document.getElementById("cart-panel");
+    const cartOverlay = document.getElementById("cart-overlay");
+    const music = document.getElementById("background-music");
+    const musicButton = document.getElementById("music-button");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // =====================================================
+    // OUTILS
+    // =====================================================
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, function(char) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        }[char];
+      });
+    }
+
+    function formatPrice(value) {
+      return Number(value || 0).toLocaleString("fr-FR") + " FCFA";
+    }
+
+    function getProductName(product) {
+      return product.Namr ?? product.Nom ?? product.nom ?? "Article KEANA SHOP";
+    }
+
+    function getProductPrice(product) {
+      return Number(product.Prix ?? product.prix ?? 0);
+    }
+
+    function getProductCategory(product) {
+      return String(
+        product["Catégorie"] ??
+        product.Categorie ??
+        product.Catégorie ??
+        product.categorie ??
+        "Autre"
+      );
+    }
+
+    function getProductStock(product) {
+      return Math.max(0, Number(product.Stock ?? product.stock ?? 0));
+    }
+
+    function getProductSizes(product) {
+      const rawSizes = product.Taille ?? product.Tailles ?? product.taille ?? "";
+
+      if (Array.isArray(rawSizes)) {
+        return rawSizes.map(String).map(s => s.trim()).filter(Boolean);
+      }
+
+      return String(rawSizes)
+        .split(/[,;/|]/)
+        .map(size => size.trim())
+        .filter(Boolean);
+    }
+
+    function getImageURL(product) {
+      const raw = String(
+        product.image_url ??
+        product.image ??
+        product.Image ??
+        ""
+      ).trim();
+
+      if (!raw) {
+        return "";
+      }
+
+      if (/^https?:\/\//i.test(raw)) {
+        return raw;
+      }
+
+      return raw.replace(/^\/+/, "");
+    }
+
+    // =====================================================
+    // CHARGER LES PRODUITS DEPUIS SUPABASE
+    // =====================================================
+
+    async function loadProducts() {
+      productsGrid.innerHTML =
+        '<div class="status-message">Chargement de la collection...</div>';
+
+      try {
+        const response = await fetch(
+          SUPABASE_URL +
+          "/rest/v1/" +
+          encodeURIComponent(TABLE_NAME) +
