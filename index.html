@@ -707,8 +707,10 @@ window.addEventListener("load", () => {
 
 // Nouvelle tentative lors de la première interaction si le navigateur l'a bloquée.
 document.addEventListener("pointerdown", function firstInteraction() {
-  if (music.paused) startMusic();
-}, { once:true });
+  if (music.paused) {
+    startMusic();
+  }
+}, { once: true, capture: true });
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
