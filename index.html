@@ -1,927 +1,912 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-
-  <title>KEANA SHOP | Mode masculine</title>
-
-  <meta name="description"
-        content="Découvrez les chemises et tuniques élégantes de KEANA SHOP. Commandez facilement sur WhatsApp.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
-
-  <style>
-    :root {
-      --black: #111111;
-      --black-light: #1c1c1c;
-      --gold: #c9a45c;
-      --gold-light: #e8d09a;
-      --ivory: #fffaf0;
-      --cream: #f5efe3;
-      --text: #252525;
-      --muted: #777;
-      --white: #fff;
-      --danger: #a52929;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--ivory);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    button, input, select {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .announcement {
-      background: var(--gold);
-      color: var(--black);
-      text-align: center;
-      padding: 8px 12px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    header {
-      background: var(--black);
-      color: var(--white);
-      padding: 15px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid rgba(201,164,92,.4);
-    }
-
-    .logo {
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      white-space: nowrap;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    nav a {
-      color: var(--white);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    .cart-button {
-      background: var(--gold);
-      color: var(--black);
-      border: none;
-      padding: 10px 14px;
-      border-radius: 4px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .hero {
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      color: var(--white);
-      padding: 65px 7%;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.32)),
-        url('photos/banniere-chemise-bordeaux.png') center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 560px;
-    }
-
-    .eyebrow {
-      color: var(--gold-light);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(38px, 6vw, 66px);
-      line-height: 1.13;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero p {
-      max-width: 450px;
-      color: #eee;
-      font-size: 15px;
-      margin-bottom: 28px;
-    }
-
-    .primary-button {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--black);
-      border: 1px solid var(--gold);
-      border-radius: 4px;
-      padding: 13px 22px;
-      font-weight: 800;
-      transition: .2s;
-    }
-
-    .primary-button:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .section {
-      padding: 65px 5%;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .section-heading .eyebrow {
-      color: #98742d;
-      margin-bottom: 8px;
-    }
-
-    .section-heading h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 42px);
-      color: var(--black);
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 10px;
-    }
-
-    .filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .filter-button {
-      padding: 9px 16px;
-      border: 1px solid #d6c8aa;
-      border-radius: 30px;
-      background: transparent;
-      color: var(--text);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .filter-button.active,
-    .filter-button:hover {
-      background: var(--black);
-      border-color: var(--black);
-      color: var(--gold);
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .product-card {
-      background: var(--white);
-      border: 1px solid #eee5d6;
-      border-radius: 6px;
-      overflow: hidden;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(0,0,0,.08);
-    }
-
-    .product-image-wrap {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      background: #eee8de;
-      overflow: hidden;
-    }
-
-    .product-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .category-badge {
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      padding: 5px 8px;
-      background: rgba(17,17,17,.88);
-      color: var(--gold-light);
-      font-size: 10px;
-      font-weight: 700;
-      border-radius: 3px;
-    }
-
-    .stock-badge {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      padding: 5px 8px;
-      background: var(--white);
-      color: var(--text);
-      font-size: 10px;
-      font-weight: 700;
-      border-radius: 3px;
-    }
-
-    .product-info {
-      padding: 15px;
-    }
-
-    .product-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px;
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-
-    .product-price {
-      color: #8a6727;
-      font-size: 17px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .product-info label,
-    .cart-item label {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      margin: 10px 0 5px;
-    }
-
-    .product-info select {
-      width: 100%;
-      padding: 9px;
-      border: 1px solid #ddd1bc;
-      border-radius: 4px;
-      background: var(--ivory);
-      color: var(--text);
-    }
-
-    .add-button {
-      width: 100%;
-      margin-top: 12px;
-      padding: 11px;
-      background: var(--black);
-      color: var(--gold);
-      border: 1px solid var(--black);
-      border-radius: 4px;
-      font-weight: 800;
-      font-size: 12px;
-    }
-
-    .add-button:hover:not(:disabled) {
-      background: var(--gold);
-      color: var(--black);
-      border-color: var(--gold);
-    }
-
-    .add-button:disabled {
-      opacity: .5;
-      cursor: not-allowed;
-    }
-
-    .status-message {
-      text-align: center;
-      padding: 30px 15px;
-      color: var(--muted);
-      grid-column: 1 / -1;
-    }
-
-    .status-message.error {
-      color: var(--danger);
-    }
-
-    .benefits {
-      background: var(--black);
-      color: var(--white);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      padding: 40px 6%;
-      text-align: center;
-    }
-
-    .benefit-icon {
-      color: var(--gold);
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .benefits h3 {
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-
-    .benefits p {
-      color: #ccc;
-      font-size: 12px;
-    }
-
-    .contact-section {
-      text-align: center;
-      background: var(--cream);
-    }
-
-    .contact-section p {
-      max-width: 550px;
-      margin: 12px auto 24px;
-      color: #555;
-      font-size: 14px;
-    }
-
-    .whatsapp-button {
-      display: inline-block;
-      background: #168b50;
-      color: white;
-      padding: 13px 22px;
-      border-radius: 4px;
-      font-weight: 800;
-    }
-
-    footer {
-      background: var(--black);
-      color: #ddd;
-      text-align: center;
-      padding: 30px 15px;
-      font-size: 12px;
-    }
-
-    footer .logo {
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-
-    footer p {
-      margin: 4px 0;
-    }
-
-    .music-button {
-      position: fixed;
-      left: 15px;
-      bottom: 15px;
-      z-index: 70;
-      border: 1px solid var(--gold);
-      border-radius: 50px;
-      padding: 11px 14px;
-      background: var(--black);
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 800;
-      box-shadow: 0 3px 12px rgba(0,0,0,.2);
-    }
-
-    .cart-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.55);
-      z-index: 90;
-      display: none;
-    }
-
-    .cart-overlay.open {
-      display: block;
-    }
-
-    .cart-panel {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: min(440px, 100%);
-      height: 100%;
-      background: var(--ivory);
-      z-index: 100;
-      display: flex;
-      flex-direction: column;
-      transition: right .25s;
-      box-shadow: -5px 0 25px rgba(0,0,0,.15);
-    }
-
-    .cart-panel.open {
-      right: 0;
-    }
-
-    .cart-header {
-      padding: 18px;
-      background: var(--black);
-      color: var(--gold);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .cart-header h2 {
-      font-family: 'Playfair Display', serif;
-    }
-
-    .close-cart {
-      border: 0;
-      background: transparent;
-      color: white;
-      font-size: 28px;
-    }
-
-    .cart-items {
-      padding: 15px;
-      overflow-y: auto;
-      flex: 1;
-    }
-
-    .empty-cart {
-      text-align: center;
-      padding: 45px 15px;
-      color: var(--muted);
-    }
-
-    .cart-item {
-      padding: 14px 0;
-      border-bottom: 1px solid #e5dac7;
-    }
-
-    .cart-item h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-    }
-
-    .cart-item p {
-      font-size: 13px;
-      margin-top: 3px;
-    }
-
-    .cart-item-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .quantity-button {
-      width: 30px;
-      height: 30px;
-      border: 1px solid #d7c8ad;
-      background: white;
-      border-radius: 4px;
-    }
-
-    .remove-button {
-      border: none;
-      background: transparent;
-      color: var(--danger);
-      font-size: 12px;
-      margin-left: auto;
-    }
-
-    .cart-footer {
-      border-top: 1px solid #ddd0bb;
-      padding: 18px;
-    }
-
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 17px;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .checkout-button {
-      width: 100%;
-      border: none;
-      border-radius: 4px;
-      padding: 14px;
-      background: #168b50;
-      color: white;
-      font-weight: 800;
-    }
-
-    .checkout-button:disabled {
-      opacity: .5;
-      cursor: not-allowed;
-    }
-
-    .checkout-note {
-      color: var(--muted);
-      font-size: 11px;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    @media (max-width: 1000px) {
-      .products-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 700px) {
-      header {
-        padding: 12px 4%;
-        flex-wrap: wrap;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        gap: 22px;
-      }
-
-      nav a {
-        font-size: 11px;
-      }
-
-      .hero {
-        min-height: 480px;
-        padding: 55px 6%;
-        background-position: 58% center;
-      }
-
-      .hero p {
-        font-size: 14px;
-      }
-
-      .section {
-        padding: 48px 4%;
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .product-info {
-        padding: 11px;
-      }
-
-      .product-info h3 {
-        font-size: 15px;
-      }
-
-      .product-price {
-        font-size: 15px;
-      }
-
-      .benefits {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fbf7ef">
+
+<title>KEANA SHOP — Votre style, votre identité</title>
+<meta name="description" content="Découvrez les chemises et tuniques masculines de KEANA SHOP. Votre style, votre identité.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --fond: #fbf7ef;
+  --blanc: #fff;
+  --beige: #efe3d0;
+  --noir: #25231f;
+  --or: #b58b43;
+  --texte: #454139;
+  --gris: #777168;
+  --vert: #355548;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--fond);
+  color: var(--texte);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+button, select { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.announcement {
+  text-align: center;
+  background: var(--or);
+  color: white;
+  padding: 8px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #e8decd;
+  padding: 13px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  color: var(--noir);
+  font: 700 25px 'Playfair Display', serif;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.logo span { color: var(--or); }
+
+nav { display: flex; gap: 22px; }
+
+nav a { font-size: 12px; font-weight: 700; }
+nav a:hover { color: var(--or); }
+
+.cart-button {
+  border: 0;
+  border-radius: 3px;
+  padding: 10px 13px;
+  background: var(--noir);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cart-button span { color: #f1d49a; }
+
+/* BANNIÈRE */
+
+.hero {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 35px;
+  padding: 42px 5%;
+  background: linear-gradient(125deg, #fcf8f0, #eee0c9);
+}
+
+.hero-copy { padding: 15px 0; }
+
+.eyebrow {
+  color: var(--or);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+
+.hero h1 {
+  color: var(--noir);
+  font: 600 clamp(37px, 5vw, 64px)/1.12 'Playfair Display', serif;
+  margin-bottom: 18px;
+}
+
+.hero h1 span { color: var(--or); }
+
+.hero-copy p {
+  color: #665e51;
+  max-width: 420px;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.primary-button {
+  display: inline-block;
+  border: 1px solid var(--or);
+  border-radius: 3px;
+  background: var(--or);
+  color: white;
+  padding: 13px 20px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.primary-button:hover {
+  background: var(--noir);
+  border-color: var(--noir);
+}
+
+.hero-gallery {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 13px;
+  height: 410px;
+}
+
+.hero-photo {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #e7dac5;
+  box-shadow: 0 10px 28px #57401b18;
+}
+
+.hero-photo:nth-child(2) {
+  height: 80%;
+  margin-top: 35px;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.hero-photo:hover img { transform: scale(1.04); }
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 26px 10px 10px;
+  background: linear-gradient(transparent, #0008);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* GALERIE ANIMÉE */
+
+.museum {
+  padding: 35px 0;
+  background: #fffdf9;
+  border-bottom: 1px solid #eee5d8;
+  overflow: hidden;
+}
+
+.section-heading {
+  text-align: center;
+  padding: 0 15px;
+  margin-bottom: 25px;
+}
+
+.section-heading h2 {
+  color: var(--noir);
+  font: 600 clamp(27px, 4vw, 38px) 'Playfair Display', serif;
+}
+
+.section-heading p {
+  margin-top: 7px;
+  color: var(--gris);
+  font-size: 12px;
+}
+
+.museum-window {
+  overflow: hidden;
+  width: 100%;
+}
+
+.museum-track {
+  display: flex;
+  width: max-content;
+  gap: 15px;
+  padding: 5px 15px 14px;
+  animation: defilement 48s linear infinite;
+}
+
+.museum-window:hover .museum-track,
+.museum-window.paused .museum-track {
+  animation-play-state: paused;
+}
+
+@keyframes defilement {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.mini-card {
+  flex: 0 0 155px;
+  width: 155px;
+  overflow: hidden;
+  border: 1px solid #eee4d4;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 3px 12px #00000008;
+}
+
+.mini-card img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  background: var(--beige);
+}
+
+.mini-info { padding: 10px; }
+
+.mini-info h3 {
+  min-height: 38px;
+  font: 600 13px/1.4 'Playfair Display', serif;
+}
+
+.mini-info p {
+  color: var(--or);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mini-info a {
+  display: inline-block;
+  margin-top: 7px;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+/* BOUTIQUE */
+
+.shop {
+  padding: 60px 5%;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 28px;
+}
+
+.filter-button {
+  background: transparent;
+  border: 1px solid #d8c8ac;
+  border-radius: 25px;
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.filter-button.active,
+.filter-button:hover {
+  background: var(--noir);
+  color: #f1d49a;
+  border-color: var(--noir);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #eee5d8;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px #0000000c;
+}
+
+.product-image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--beige);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  padding: 5px 8px;
+  background: #fffef3ed;
+  color: var(--noir);
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 2px;
+}
+
+.stock-badge {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: #fff;
+  border-radius: 2px;
+  padding: 4px 7px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.product-info { padding: 13px; }
+
+.product-info h3 {
+  font: 600 16px/1.4 'Playfair Display', serif;
+  margin-bottom: 7px;
+}
+
+.product-price {
+  color: #9a712e;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.product-info label {
+  display: block;
+  margin: 8px 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.product-info select {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #ddd1bd;
+  border-radius: 3px;
+  background: var(--fond);
+}
+
+.add-button {
+  width: 100%;
+  margin-top: 11px;
+  padding: 11px 7px;
+  background: var(--noir);
+  color: #f1d49a;
+  border: 0;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.add-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.status-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 28px 12px;
+  color: var(--gris);
+}
+
+.status-message.error { color: #a12a2a; }
+
+/* AVANTAGES ET CONTACT */
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: center;
+  padding: 38px 6%;
+  background: #eee3d1;
+}
+
+.benefit-icon { font-size: 26px; color: var(--or); }
+.benefits h3 { font-size: 13px; margin: 6px 0; }
+.benefits p { color: #70685c; font-size: 12px; }
+
+.contact {
+  padding: 55px 5%;
+  text-align: center;
+}
+
+.contact p {
+  max-width: 520px;
+  margin: 12px auto 22px;
+  color: var(--gris);
+  font-size: 14px;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 13px 21px;
+  border-radius: 3px;
+  background: #168b50;
+  color: white;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+footer {
+  padding: 27px 15px;
+  background: #fff;
+  border-top: 1px solid #e8decd;
+  text-align: center;
+  font-size: 12px;
+  color: var(--gris);
+}
+
+footer .logo { display: inline-block; margin-bottom: 5px; }
+
+/* MUSIQUE */
+
+.music-button {
+  position: fixed;
+  bottom: 15px;
+  left: 14px;
+  z-index: 50;
+  border: 1px solid var(--or);
+  border-radius: 30px;
+  padding: 10px 13px;
+  background: white;
+  color: var(--noir);
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 3px 12px #00000018;
+}
+
+/* PANIER */
+
+.cart-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: #0008;
+}
+
+.cart-overlay.open { display: block; }
+
+.cart-panel {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  right: -105%;
+  height: 100%;
+  width: min(420px, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--fond);
+  transition: right .25s;
+  box-shadow: -5px 0 25px #0002;
+}
+
+.cart-panel.open { right: 0; }
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--noir);
+  color: white;
+}
+
+.cart-header h2 { font: 600 24px 'Playfair Display', serif; }
+
+.close-cart {
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 28px;
+}
+
+.cart-items { padding: 15px; overflow-y: auto; flex: 1; }
+
+.empty-cart { padding: 40px 10px; text-align: center; color: var(--gris); }
+
+.cart-item {
+  padding: 13px 0;
+  border-bottom: 1px solid #e5d9c6;
+}
+
+.cart-item h3 { font: 600 16px 'Playfair Display', serif; }
+.cart-item p { font-size: 12px; margin-top: 3px; }
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 9px;
+}
+
+.quantity-button {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 1px solid #d8c8ac;
+  border-radius: 3px;
+}
+
+.remove-button {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  color: #a12a2a;
+  font-size: 11px;
+}
+
+.cart-footer {
+  padding: 16px;
+  border-top: 1px solid #e5d9c6;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  margin-bottom: 13px;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 3px;
+  background: #168b50;
+  color: white;
+  font-weight: 800;
+}
+
+.checkout-button:disabled { opacity: .5; }
+
+.checkout-note {
+  margin-top: 9px;
+  color: var(--gris);
+  font-size: 10px;
+  text-align: center;
+}
+
+@media (max-width: 950px) {
+  .products-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero { gap: 20px; }
+  .hero-gallery { height: 350px; }
+}
+
+@media (max-width: 650px) {
+  header { padding: 11px 4%; flex-wrap: wrap; }
+  .logo { font-size: 21px; }
+  nav { order: 3; width: 100%; justify-content: center; gap: 25px; }
+  nav a { font-size: 11px; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 28px 5% 32px;
+    gap: 20px;
+  }
+
+  .hero-copy { padding: 8px 0; }
+  .hero h1 { font-size: 43px; }
+  .hero-copy p { font-size: 13px; }
+
+  .hero-gallery {
+    height: 320px;
+    gap: 9px;
+  }
+
+  .hero-photo:nth-child(2) { margin-top: 22px; }
+
+  .museum { padding: 30px 0; }
+  .museum-track { gap: 12px; animation-duration: 40s; }
+  .mini-card { flex-basis: 135px; width: 135px; }
+  .mini-card img { height: 140px; }
+
+  .shop { padding: 45px 4%; }
+  .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .product-info { padding: 10px; }
+  .product-info h3 { font-size: 14px; }
+  .product-price { font-size: 14px; }
+  .benefits { grid-template-columns: 1fr; gap: 24px; }
+}
+
+@media (max-width: 340px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 36px; }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="announcement">
-    KEANA SHOP — L'ÉLÉGANCE AU MASCULIN
+<div class="announcement">KEANA SHOP • MODE MASCULINE • ÉLÉGANCE AU QUOTIDIEN</div>
+
+<header>
+  <a class="logo" href="#accueil">KEANA <span>SHOP</span></a>
+
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#boutique">Boutique</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <button class="cart-button" onclick="openCart()">
+    Panier (<span id="cart-count">0</span>)
+  </button>
+</header>
+
+<main>
+
+<section class="hero" id="accueil">
+  <div class="hero-copy">
+    <div class="eyebrow">La mode qui vous ressemble</div>
+    <h1>Votre style,<br><span>votre identité.</span></h1>
+    <p>
+      Affirmez votre personnalité avec notre sélection de chemises
+      et de tuniques masculines. Un style qui vous ressemble,
+      une élégance qui vous distingue.
+    </p>
+    <a class="primary-button" href="#boutique">DÉCOUVRIR LA COLLECTION</a>
   </div>
 
-  <header>
-    <a class="logo" href="#accueil">KEANA SHOP</a>
+  <div class="hero-gallery">
+    <a class="hero-photo" href="#boutique" aria-label="Découvrir le look terracotta">
+      <img src="photos/banniere-look-terracotta-assis.png"
+           alt="Look masculin terracotta"
+           fetchpriority="high"
+           onerror="this.style.display='none'">
+      <span class="photo-caption">LE LOOK SIGNATURE</span>
+    </a>
 
-    <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#boutique">Boutique</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a class="hero-photo" href="#boutique" aria-label="Découvrir les chemises">
+      <img src="photos/banniere-chemise-blanche-motifs-verts.png"
+           alt="Chemise blanche à motifs verts"
+           fetchpriority="high"
+           onerror="this.style.display='none'">
+      <span class="photo-caption">LA COLLECTION CHEMISES</span>
+    </a>
+  </div>
+</section>
 
-    <button class="cart-button" onclick="openCart()">
-      Panier (<span id="cart-count">0</span>)
+<section class="museum" aria-label="Galerie animée de vêtements">
+  <div class="section-heading">
+    <div class="eyebrow">L'exposition KEANA</div>
+    <h2>Un style à découvrir</h2>
+    <p>Découvrez nos modèles en faisant défiler la galerie.</p>
+  </div>
+
+  <div class="museum-window" id="museum-window">
+    <div class="museum-track" id="museum-track">
+      <div class="status-message">Préparation de la galerie...</div>
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="boutique">
+  <div class="section-heading">
+    <div class="eyebrow">La collection</div>
+    <h2>Découvrez nos modèles</h2>
+    <p>Choisissez votre article et votre taille pour l'ajouter au panier.</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter-button active" onclick="filterProducts('Tous',this)">Tout voir</button>
+    <button class="filter-button" onclick="filterProducts('Chemise',this)">Chemises</button>
+    <button class="filter-button" onclick="filterProducts('Tunique',this)">Tuniques</button>
+  </div>
+
+  <div class="products-grid" id="products-grid">
+    <div class="status-message">Chargement des articles...</div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div>
+    <div class="benefit-icon">✦</div>
+    <h3>Votre style, votre identité</h3>
+    <p>Des modèles pour affirmer votre personnalité.</p>
+  </div>
+  <div>
+    <div class="benefit-icon">◆</div>
+    <h3>Commande simplifiée</h3>
+    <p>Préparez votre panier et commandez sur WhatsApp.</p>
+  </div>
+  <div>
+    <div class="benefit-icon">✓</div>
+    <h3>À votre écoute</h3>
+    <p>Contactez-nous pour vos questions sur les articles.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-heading">
+    <div class="eyebrow">Contact</div>
+    <h2>Parlons de votre style</h2>
+  </div>
+  <p>Une question sur un modèle, une taille ou une commande ? Écrivez-nous directement.</p>
+  <a class="whatsapp-button" href="https://wa.me/2250702004038" target="_blank" rel="noopener">
+    NOUS CONTACTER SUR WHATSAPP
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <a class="logo" href="#accueil">KEANA <span>SHOP</span></a>
+  <p>Votre style, votre identité.</p>
+  <p>© <span id="year"></span> KEANA SHOP — Tous droits réservés.</p>
+</footer>
+
+<audio id="background-music" loop preload="none">
+  <source src="photos/musique%20KEANA%20SHOP.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="music-button" onclick="toggleMusic()">
+  ♫ Activer la musique
+</button>
+
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+
+<aside class="cart-panel" id="cart-panel" aria-label="Panier">
+  <div class="cart-header">
+    <h2>Votre panier</h2>
+    <button class="close-cart" onclick="closeCart()" aria-label="Fermer">×</button>
+  </div>
+
+  <div class="cart-items" id="cart-items">
+    <div class="empty-cart">Votre panier est vide.</div>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cart-total">0 FCFA</span>
+    </div>
+    <button class="checkout-button" id="checkout-button" onclick="checkout()" disabled>
+      Commander sur WhatsApp
     </button>
-  </header>
+    <p class="checkout-note">La disponibilité et la livraison seront confirmées sur WhatsApp.</p>
+  </div>
+</aside>
 
-  <main>
-    <section class="hero" id="accueil">
-      <div class="hero-content">
-        <div class="eyebrow">Style • Qualité • Élégance</div>
+<script>
+/* CONFIGURATION */
+const SUPABASE_URL = "https://zwuvwuchiwpledasygqy.supabase.co";
+const SUPABASE_KEY = "sb_publishable_eXsqM7Cl-QHxScR_LE4Yeg_O-V-PS1N";
+const TABLE_NAME = "Produits";
+const WHATSAPP_NUMBER = "2250702004038";
 
-        <h1>
-          L'élégance<br>
-          commence par <span>vous.</span>
-        </h1>
+let products = [];
+let cart = [];
+let currentCategory = "Tous";
 
-        <p>
-          Découvrez notre sélection de chemises et de tuniques
-          masculines pour affirmer votre style en toute occasion.
-        </p>
+const grid = document.getElementById("products-grid");
+const track = document.getElementById("museum-track");
+const music = document.getElementById("background-music");
+const musicButton = document.getElementById("music-button");
 
-        <a href="#boutique" class="primary-button">
-          Découvrir la collection
-        </a>
-      </div>
-    </section>
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    <section class="section" id="boutique">
-      <div class="section-heading">
-        <div class="eyebrow">Notre sélection</div>
-        <h2>La boutique</h2>
-        <p>Choisissez votre modèle, votre taille et ajoutez-le au panier.</p>
-      </div>
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;",
+    '"': "&quot;", "'": "&#039;"
+  })[c]);
+}
 
-      <div class="filters">
-        <button class="filter-button active"
-                data-category="Tous"
-                onclick="filterProducts('Tous', this)">
-          Tout voir
-        </button>
+function money(value) {
+  return Number(value || 0).toLocaleString("fr-FR") + " FCFA";
+}
 
-        <button class="filter-button"
-                data-category="Chemise"
-                onclick="filterProducts('Chemise', this)">
-          Chemises
-        </button>
+function nameOf(p) {
+  return p.Namr ?? p.Nom ?? p.nom ?? "Article KEANA SHOP";
+}
 
-        <button class="filter-button"
-                data-category="Tunique"
-                onclick="filterProducts('Tunique', this)">
-          Tuniques
-        </button>
-      </div>
+function priceOf(p) {
+  return Number(p.Prix ?? p.prix ?? 0);
+}
 
-      <div class="products-grid" id="products-grid">
-        <div class="status-message">
-          Chargement de la collection...
-        </div>
-      </div>
-    </section>
+function categoryOf(p) {
+  return String(p["Catégorie"] ?? p.Categorie ?? p.categorie ?? "Autre");
+}
 
-    <section class="benefits">
-      <div>
-        <div class="benefit-icon">✦</div>
-        <h3>Style et élégance</h3>
-        <p>Des vêtements pour affirmer votre personnalité.</p>
-      </div>
+function stockOf(p) {
+  return Math.max(0, Number(p.Stock ?? p.stock ?? 0));
+}
 
-      <div>
-        <div class="benefit-icon">◆</div>
-        <h3>Commande simple</h3>
-        <p>Préparez votre panier et commandez par WhatsApp.</p>
-      </div>
+function sizesOf(p) {
+  const value = p.Taille ?? p.Tailles ?? p.taille ?? "";
+  if (Array.isArray(value)) return value.map(String).map(s => s.trim()).filter(Boolean);
+  return String(value).split(/[,;/|]/).map(s => s.trim()).filter(Boolean);
+}
 
-      <div>
-        <div class="benefit-icon">✓</div>
-        <h3>Service client</h3>
-        <p>Contactez-nous pour vos questions sur les articles.</p>
-      </div>
-    </section>
+function imageOf(p) {
+  const value = String(p.image_url ?? p.image ?? p.Image ?? "").trim();
+  if (!value) return "";
+  if (/^https?:\/\//i.test(value)) return value;
+  return value.replace(/^\/+/, "");
+}
 
-    <section class="section contact-section" id="contact">
-      <div class="section-heading">
-        <div class="eyebrow">Restons en contact</div>
-        <h2>Besoin d'aide ?</h2>
-      </div>
+/* PRODUITS SUPABASE */
+async function loadProducts() {
+  grid.innerHTML = '<div class="status-message">Chargement des articles...</div>';
 
-      <p>
-        Une question sur une chemise, une tunique ou une taille ?
-        Écrivez-nous directement sur WhatsApp.
-      </p>
-
-      <a class="whatsapp-button"
-         href="https://wa.me/2250702004038"
-         target="_blank"
-         rel="noopener">
-        Nous contacter sur WhatsApp
-      </a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="logo">KEANA SHOP</div>
-    <p>L'élégance au masculin.</p>
-    <p>© <span id="year"></span> KEANA SHOP — Tous droits réservés.</p>
-  </footer>
-
-  <audio id="background-music" loop preload="none">
-    <source src="photos/musique%20KEANA%20SHOP.mp3" type="audio/mpeg">
-  </audio>
-
-  <button class="music-button"
-          id="music-button"
-          onclick="toggleMusic()">
-    ♫ Activer la musique
-  </button>
-
-  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
-
-  <aside class="cart-panel" id="cart-panel" aria-label="Votre panier">
-    <div class="cart-header">
-      <h2>Votre panier</h2>
-      <button class="close-cart"
-              aria-label="Fermer le panier"
-              onclick="closeCart()">×</button>
-    </div>
-
-    <div class="cart-items" id="cart-items">
-      <div class="empty-cart">Votre panier est vide.</div>
-    </div>
-
-    <div class="cart-footer">
-      <div class="cart-total">
-        <span>Total</span>
-        <span id="cart-total">0 FCFA</span>
-      </div>
-
-      <button class="checkout-button"
-              id="checkout-button"
-              onclick="checkout()"
-              disabled>
-        Commander sur WhatsApp
-      </button>
-
-      <p class="checkout-note">
-        La commande sera envoyée sur WhatsApp pour confirmation.
-      </p>
-    </div>
-  </aside>
-
-  <script>
-    // =====================================================
-    // CONFIGURATION SUPABASE
-    // =====================================================
-
-    const SUPABASE_URL = "https://zwuvwuchiwpledasygqy.supabase.co";
-
-    const SUPABASE_KEY = "sb_publishable_eXsqM7Cl-QHxScR_LE4Yeg_O-V-PS1N";
-
-    const TABLE_NAME = "Produits";
-
-    const WHATSAPP_NUMBER = "2250702004038";
-
-    // =====================================================
-    // VARIABLES
-    // =====================================================
-
-    let products = [];
-    let cart = [];
-    let currentCategory = "Tous";
-
-    const productsGrid = document.getElementById("products-grid");
-    const cartPanel = document.getElementById("cart-panel");
-    const cartOverlay = document.getElementById("cart-overlay");
-    const music = document.getElementById("background-music");
-    const musicButton = document.getElementById("music-button");
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // =====================================================
-    // OUTILS
-    // =====================================================
-
-    function escapeHTML(value) {
-      return String(value ?? "").replace(/[&<>"']/g, function(char) {
-        return {
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#039;"
-        }[char];
-      });
-    }
-
-    function formatPrice(value) {
-      return Number(value || 0).toLocaleString("fr-FR") + " FCFA";
-    }
-
-    function getProductName(product) {
-      return product.Namr ?? product.Nom ?? product.nom ?? "Article KEANA SHOP";
-    }
-
-    function getProductPrice(product) {
-      return Number(product.Prix ?? product.prix ?? 0);
-    }
-
-    function getProductCategory(product) {
-      return String(
-        product["Catégorie"] ??
-        product.Categorie ??
-        product.Catégorie ??
-        product.categorie ??
-        "Autre"
-      );
-    }
-
-    function getProductStock(product) {
-      return Math.max(0, Number(product.Stock ?? product.stock ?? 0));
-    }
-
-    function getProductSizes(product) {
-      const rawSizes = product.Taille ?? product.Tailles ?? product.taille ?? "";
-
-      if (Array.isArray(rawSizes)) {
-        return rawSizes.map(String).map(s => s.trim()).filter(Boolean);
+  try {
+    const response = await fetch(
+      SUPABASE_URL + "/rest/v1/" + encodeURIComponent(TABLE_NAME) + "?select=*",
+      {
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: "Bearer " + SUPABASE_KEY
+        }
       }
+    );
 
-      return String(rawSizes)
-        .split(/[,;/|]/)
-        .map(size => size.trim())
-        .filter(Boolean);
+    if (!response.ok) {
+      throw new Error("Supabase HTTP " + response.status + ": " + await response.text());
     }
 
-    function getImageURL(product) {
-      const raw = String(
-        product.image_url ??
-        product.image ??
-        product.Image ??
-        ""
-      ).trim();
+    const data = await response.json();
+    products = Array.isArray(data) ? data : [];
 
-      if (!raw) {
-        return "";
-      }
-
-      if (/^https?:\/\//i.test(raw)) {
-        return raw;
-      }
-
-      return raw.replace(/^\/+/, "");
+    if (!products.length) {
+      grid.innerHTML = '<div class="status-message">Aucun article disponible pour le moment.</div>';
+      track.innerHTML = "";
+      return;
     }
 
-    // =====================================================
-    // CHARGER LES PRODUITS DEPUIS SUPABASE
-    // =====================================================
+    renderProducts();
+    renderMuseum();
 
-    async function loadProducts() {
-      productsGrid.innerHTML =
-        '<div class="status-message">Chargement de la collection...</div>';
+  } catch (error) {
+    console.error("Chargement des produits impossible :", error);
+    grid.innerHTML = `
+      <div class="status-message error">
+        <strong>Les produits ne se chargent pas.</strong>
+        <p>La connexion à Supabase ou les autorisations de lecture doivent être vérifiées.</p>
+        <button class="primary-button" style="margin-top:12px" onclick="loadProducts()">Réessayer</button>
+      </div>`;
+    track.innerHTML = "";
+  }
+}
 
-      try {
-        const response = await fetch(
-          SUPABASE_URL +
-          "/rest/v1/" +
-          encodeURIComponent(TABLE_NAME) +
+/* GALERIE ANIMÉE : PRODUITS RÉELS */
+function renderMuseum() {
+  const usable = products.filter(p => imageOf(p));
+
+  if (!usable.length) {
+    track.innerHTML = '<div class="status-message">Les photos des produits doivent être renseignées dans Supabase.</div>';
+    return;
+  }
+
+  const cards = usable.map(p => {
+    const id = String(p.id ?? "");
+    return `
+      <article class="mini-card">
+        <a href="#boutique" aria-label="Voir ${escapeHTML(nameOf(p))}">
+          <img src="${escapeHTML(imageOf(p))}"
+               alt="${escapeHTML(nameOf(p))}"
+               loading="lazy"
+               one
