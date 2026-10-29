@@ -2,592 +2,676 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fffaf1">
-<title>KEANA SHOP — Votre style, votre identité</title>
-<meta name="description" content="Découvrez la collection masculine KEANA SHOP : chemises et tuniques.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171512">
+<title>KEANA SHOP | Votre style, votre identité</title>
+<meta name="description" content="Découvrez les chemises et tuniques KEANA SHOP. Commandez directement sur WhatsApp.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --ivory: #fffaf1;
-  --beige: #eee1ce;
-  --black: #171512;
-  --gold: #d4af37;
-  --gold-dark: #8d6716;
-  --text: #302b24;
+  --black:#171512;
+  --black2:#242019;
+  --ivory:#fffaf1;
+  --beige:#eee1ce;
+  --gold:#d4af37;
+  --gold-dark:#8d6716;
+  --text:#302b24;
 }
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  margin: 0;
-  font-family: Montserrat, Arial, sans-serif;
-  background: var(--ivory);
-  color: var(--text);
+  margin:0;
+  background:var(--ivory);
+  color:var(--text);
+  font-family:'Montserrat',sans-serif;
 }
-
-a { text-decoration: none; color: inherit; }
-button { font-family: inherit; }
-img { display: block; max-width: 100%; }
-
-.gold-text {
-  background: linear-gradient(110deg, #8d6716, #fff0a6, #c49a2c, #fff4bd, #946710);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.topbar {
-  padding: 10px;
-  text-align: center;
-  background: var(--black);
-  color: #f6df92;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
+button,a { -webkit-tap-highlight-color:transparent; }
+a { color:inherit; text-decoration:none; }
+img { max-width:100%; display:block; }
+button { font:inherit; cursor:pointer; }
 header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(255,250,241,.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e5d5b4;
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(23,21,18,.97);
+  color:var(--ivory);
+  border-bottom:1px solid rgba(212,175,55,.4);
 }
-
 .nav {
-  max-width: 1200px;
-  min-height: 70px;
-  padding: 12px 20px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  max-width:1200px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
 }
-
 .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 23px;
-  font-weight: 700;
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:2px;
 }
-
-.nav-links {
-  display: flex;
-  gap: 17px;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.nav-links a:hover { color: var(--gold-dark); }
-
+.nav-links { display:flex; gap:18px; font-size:12px; }
+.nav-links a:hover { color:var(--gold); }
 .hero {
-  min-height: 570px;
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  color: white;
-  background: #493a2b;
+  min-height:520px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  overflow:hidden;
+  background:var(--black);
 }
-
-.hero-slides, .hero-slide {
-  position: absolute;
-  inset: 0;
-}
-
 .hero-slide {
-  opacity: 0;
-  background-size: cover;
-  background-position: center 38%;
-  background-repeat: no-repeat;
-  transform: scale(1.1);
-  transition: opacity 1.3s ease;
-  animation: slowZoom 8s ease-in-out infinite alternate;
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1s;
 }
-
-.hero-slide.active { opacity: 1; }
-
-.hero-slide::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0,0,0,.63),
-    rgba(0,0,0,.17),
-    rgba(0,0,0,.53)
-  );
+.hero-slide.active { opacity:1; }
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.35),rgba(0,0,0,.72));
 }
-
-@keyframes slowZoom {
-  from { transform: scale(1.02); }
-  to { transform: scale(1.13); }
-}
-
 .hero-content {
-  position: relative;
-  z-index: 2;
-  width: min(700px, 100%);
-  padding: 50px 20px;
-  text-shadow: 0 2px 15px #0006;
+  position:relative;
+  z-index:2;
+  padding:65px 20px;
+  max-width:800px;
 }
-
 .eyebrow {
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  font-weight:700;
 }
-
-.hero h1 {
-  margin: 18px 0 12px;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(43px, 9vw, 82px);
-  line-height: 1.05;
+h1,h2,h3 {
+  font-family:'Playfair Display',serif;
 }
-
-.hero p {
-  margin: 20px 0 28px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  line-height: 1.9;
-}
-
+h1 { font-size:clamp(38px,7vw,70px); margin:18px 0; line-height:1.12; }
+.hero p { line-height:1.8; font-size:15px; }
+.gold { color:var(--gold); }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  border-radius: 3px;
-  padding: 14px 20px;
-  cursor: pointer;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: transform .2s, box-shadow .2s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--gold);
+  padding:13px 20px;
+  margin:10px 5px 0;
+  border-radius:3px;
+  font-size:12px;
+  font-weight:700;
+  transition:.25s;
 }
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 7px 20px #0002;
+.btn-gold { background:var(--gold); color:var(--black); }
+.btn-outline { color:var(--ivory); }
+.btn:hover { transform:translateY(-2px); }
+section { padding:65px 18px; }
+.container { max-width:1200px; margin:auto; }
+.section-heading { text-align:center; margin-bottom:32px; }
+.section-heading h2 { font-size:clamp(29px,5vw,42px); margin:10px 0; }
+.section-heading p { line-height:1.7; font-size:13px; }
+.showcase {
+  background:var(--black);
+  color:var(--ivory);
+  overflow:hidden;
 }
-
-.btn-gold {
-  color: #241b08;
-  background: linear-gradient(115deg, #986c12, #fff0a6, #c49a2c, #fff3b5, #946710);
-  border: 1px solid #f4dc86;
-  box-shadow: 0 4px 18px #c59a2d35;
-}
-
-.section {
-  max-width: 1200px;
-  padding: 65px 18px;
-  margin: auto;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.section-heading .eyebrow { color: var(--gold-dark); }
-
-.section-heading h2 {
-  margin: 12px 0;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(30px, 5vw, 43px);
-  color: var(--black);
-}
-
-.section-heading p {
-  font-size: 12px;
-  line-height: 1.9;
-  color: #766b5d;
-}
-
-.gold-line {
-  width: 65px;
-  height: 3px;
-  margin: 18px auto;
-  background: linear-gradient(90deg, #946710, #fff0a6, #bd8e1c, #fff0a6, #946710);
-}
-
-.museum {
-  overflow: hidden;
-  width: 100%;
-  padding: 5px 0 22px;
-}
-
+.museum-window { overflow:hidden; padding:8px 0 18px; }
 .museum-track {
-  display: flex;
-  width: max-content;
-  gap: 16px;
-  animation: museumScroll 35s linear infinite;
+  display:flex;
+  gap:17px;
+  width:max-content;
+  animation:museumScroll 55s linear infinite;
 }
-
-.museum:hover .museum-track,
-.museum:focus-within .museum-track {
-  animation-play-state: paused;
-}
-
-@keyframes museumScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.mini-item {
-  width: 175px;
-  flex: 0 0 175px;
-  border: 1px solid #e9dcc7;
-  background: white;
-  padding: 8px;
-}
-
+.museum-window:hover .museum-track { animation-play-state:paused; }
+.mini-item { width:180px; flex-shrink:0; }
 .mini-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  background: #eee1ce;
+  width:180px;
+  height:220px;
+  object-fit:cover;
+  border:1px solid rgba(212,175,55,.35);
+  cursor:zoom-in;
 }
-
-.mini-item strong {
-  display: block;
-  margin: 10px 2px 5px;
-  font-size: 10px;
-  line-height: 1.5;
+.mini-item h3 { font-size:14px; margin:10px 0 5px; }
+.mini-item p { color:var(--gold); font-size:12px; margin:0; }
+@keyframes museumScroll {
+  from { transform:translateX(0); }
+  to { transform:translateX(-50%); }
 }
-
-.mini-item span {
-  display: block;
-  margin: 0 2px 7px;
-  font-size: 12px;
-  font-weight: 800;
+.catalog { background:var(--ivory); }
+.filters {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:28px;
 }
-
-.category-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin: 25px 0 30px;
+.filter-btn {
+  border:1px solid #cbbd9e;
+  background:transparent;
+  padding:10px 15px;
+  border-radius:30px;
+  font-size:11px;
 }
-
-.category-btn {
-  border: 1px solid #d8c7a5;
-  background: transparent;
-  padding: 11px 17px;
-  font-size: 10px;
-  font-weight: 800;
-  cursor: pointer;
+.filter-btn.active,.filter-btn:hover {
+  background:var(--black);
+  color:var(--gold);
+  border-color:var(--black);
 }
-
-.category-btn.active,
-.category-btn:hover {
-  background: var(--black);
-  color: #f7df8c;
-  border-color: var(--black);
-}
-
 .products {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
 }
-
 .product-card {
-  overflow: hidden;
-  background: white;
-  border: 1px solid #eee3d1;
-  transition: transform .25s, box-shadow .25s;
+  background:#fff;
+  border:1px solid #eadfcb;
+  box-shadow:0 7px 24px rgba(40,30,10,.06);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
 }
-
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px #43301018;
-}
-
+.product-image-wrap { position:relative; background:#eee5d8; }
 .product-image {
-  aspect-ratio: 4 / 4.6;
-  background: #f1e8da;
-  overflow: hidden;
-  cursor: zoom-in;
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  cursor:zoom-in;
+  transition:transform .4s;
 }
-
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .4s;
+.product-card:hover .product-image { transform:scale(1.025); }
+.product-info {
+  padding:17px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
 }
-
-.product-card:hover .product-image img {
-  transform: scale(1.04);
-}
-
-.product-info { padding: 16px; }
-
 .product-category {
-  color: var(--gold-dark);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  color:var(--gold-dark);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-weight:700;
 }
-
-.product-info h3 {
-  min-height: 40px;
-  margin: 10px 0;
-  font-size: 12px;
-  line-height: 1.6;
+.product-info h3 { font-size:17px; margin:9px 0; line-height:1.4; }
+.price { font-weight:700; font-size:17px; margin:0 0 14px; }
+.order-btn {
+  margin-top:auto;
+  display:block;
+  text-align:center;
+  padding:12px 8px;
+  background:var(--black);
+  color:var(--gold);
+  font-size:11px;
+  font-weight:700;
+  border:1px solid var(--black);
 }
-
-.price {
-  margin: 12px 0;
-  color: var(--black);
-  font-size: 18px;
-  font-weight: 800;
-}
-
-.product-info .btn {
-  width: 100%;
-  padding: 13px 6px;
-  font-size: 9px;
-}
-
+.order-btn:hover { background:var(--gold); color:var(--black); }
 .about {
-  background: var(--beige);
-  text-align: center;
+  background:var(--beige);
+  text-align:center;
 }
-
-.about-inner { max-width: 760px; }
-
-.about h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 35px;
-  color: var(--black);
-}
-
-.about p {
-  color: #5e5549;
-  font-size: 12px;
-  line-height: 2;
-}
-
+.about-box { max-width:760px; margin:auto; }
+.about-box p { line-height:1.9; font-size:14px; }
 .contact {
-  padding: 55px 20px;
-  background: var(--black);
-  color: white;
-  text-align: center;
+  background:var(--black);
+  color:var(--ivory);
+  text-align:center;
 }
-
-.contact h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 32px;
-  color: #f6dc87;
-}
-
-.contact p {
-  color: #eee0c4;
-  font-size: 12px;
-  line-height: 1.9;
-}
-
+.contact p { line-height:1.8; }
+.contact .btn { color:var(--black); }
 footer {
-  padding: 23px 12px;
-  text-align: center;
-  background: #100f0d;
-  color: #cfc2a7;
-  font-size: 10px;
-  line-height: 2;
-  letter-spacing: 1px;
+  background:#0e0d0b;
+  color:#d9d0bf;
+  padding:25px 18px;
+  text-align:center;
+  font-size:11px;
+  line-height:1.8;
 }
-
+footer strong { color:var(--gold); }
 .music-button {
-  position: fixed;
-  z-index: 40;
-  right: 14px;
-  bottom: 16px;
-  border: 1px solid #f5df8e;
-  border-radius: 40px;
-  padding: 13px 16px;
-  background: linear-gradient(115deg, #986c12, #fff0a6, #c49a2c, #fff3b5, #946710);
-  color: #241b08;
-  font-size: 10px;
-  font-weight: 800;
-  box-shadow: 0 5px 18px #0003;
-  cursor: pointer;
+  position:fixed;
+  z-index:25;
+  bottom:18px;
+  right:15px;
+  border:1px solid var(--gold);
+  border-radius:40px;
+  padding:12px 16px;
+  background:var(--black);
+  color:var(--gold);
+  font-size:11px;
+  box-shadow:0 5px 20px #0003;
 }
-
-/* Agrandissement des photos */
 .lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 14px;
-  padding: 18px;
-  background: rgba(0,0,0,.93);
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.94);
+  padding:55px 15px 25px;
 }
-
-.lightbox.open { display: flex; }
-
+.lightbox.open { display:flex; }
 .lightbox img {
-  max-width: min(92vw, 700px);
-  max-height: 72vh;
-  object-fit: contain;
-  border: 1px solid #d4af37;
+  max-width:95%;
+  max-height:82vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
 }
-
-.lightbox-title {
-  color: white;
-  text-align: center;
-  font-size: 14px;
+.lightbox-close {
+  position:absolute;
+  top:12px;
+  right:18px;
+  background:none;
+  border:0;
+  color:white;
+  font-size:38px;
 }
-
-.lightbox-price {
-  color: #f6dc87;
-  font-weight: 800;
+.lightbox-caption {
+  position:absolute;
+  bottom:12px;
+  left:10px;
+  right:10px;
+  text-align:center;
+  color:var(--gold);
+  font-size:13px;
 }
-
-.lightbox-controls {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
+@media(max-width:800px) {
+  .products { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .product-image { height:245px; }
+  .product-info { padding:12px; }
+  .product-info h3 { font-size:14px; }
+  .price { font-size:15px; }
+  .nav-links { gap:10px; font-size:10px; }
+  .logo { font-size:20px; }
+  .hero { min-height:470px; }
 }
-
-.lightbox button {
-  border: 1px solid #d4af37;
-  border-radius: 4px;
-  padding: 11px 14px;
-  background: #171512;
-  color: #f6dc87;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.lightbox .close-lightbox {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  font-size: 26px;
-  padding: 5px 13px;
-}
-
-@media (max-width: 760px) {
-  .nav { min-height: 62px; padding: 10px 13px; }
-  .logo { font-size: 19px; }
-  .nav-links { gap: 10px; font-size: 9px; }
-  .hero { min-height: 490px; }
-  .hero-slide { background-position: center center; }
-  .section { padding: 48px 13px; }
-  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .product-info { padding: 11px; }
-  .product-info h3 { font-size: 11px; }
-  .price { font-size: 15px; }
-  .product-info .btn { letter-spacing: .2px; }
-  .mini-item { width: 145px; flex-basis: 145px; }
-  .mini-item img { height: 155px; }
-}
-
-@media (max-width: 360px) {
-  .products { grid-template-columns: 1fr; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-  }
+@media(max-width:420px) {
+  .nav { padding:12px 10px; }
+  .nav-links { gap:8px; }
+  .nav-links a { font-size:9px; }
+  .product-image { height:200px; }
+  .product-info h3 { font-size:12px; }
+  .order-btn { font-size:10px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">KEANA SHOP · Votre style, votre identité</div>
-
 <header>
   <nav class="nav">
-    <a class="logo" href="#"><span class="gold-text">KEANA SHOP</span></a>
+    <a class="logo" href="#accueil">KEANA SHOP</a>
     <div class="nav-links">
-      <a href="#collection">COLLECTION</a>
-      <a href="#contact">CONTACT</a>
+      <a href="#accueil">Accueil</a>
+      <a href="#collection">Collection</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
 
-<section class="hero" aria-label="Présentation de KEANA SHOP">
-  <div class="hero-slides" aria-hidden="true">
-    <div class="hero-slide active" style="background-image:url('photos/banniere-look-terracotta-assis.png')"></div>
-    <div class="hero-slide" style="background-image:url('photos/banniere-chemise-blanche-motifs-verts.png')"></div>
-    <div class="hero-slide" style="background-image:url('photos/banniere-tunique-ivoire.png')"></div>
-  </div>
-
+<main>
+<section class="hero" id="accueil">
+  <div class="hero-slide active" style="background-image:url('photos/banniere-look-terracotta-assis.png')"></div>
+  <div class="hero-slide" style="background-image:url('photos/banniere-chemise-blanche-motifs-verts.png')"></div>
+  <div class="hero-slide" style="background-image:url('photos/banniere-tunique-ivoire.png')"></div>
   <div class="hero-content">
-    <div class="eyebrow">L'élégance au masculin</div>
-    <h1>KEANA <span class="gold-text">SHOP</span></h1>
-    <p>VOTRE STYLE, VOTRE IDENTITÉ</p>
-    <a class="btn btn-gold" href="#collection">Découvrir la collection</a>
+    <div class="eyebrow">Élégance • Qualité • Identité</div>
+    <h1>Votre style,<br><span class="gold">votre identité.</span></h1>
+    <p>Découvrez notre sélection de chemises et de tuniques pensées pour affirmer votre élégance au quotidien.</p>
+    <a class="btn btn-gold" href="#collection">DÉCOUVRIR LA COLLECTION</a>
+    <a class="btn btn-outline" href="https://wa.me/2250702004038" target="_blank" rel="noopener">NOUS CONTACTER</a>
   </div>
 </section>
 
-<section class="section" id="collection">
-  <div class="section-heading">
-    <div class="eyebrow">La sélection KEANA</div>
-    <h2>Nos modèles à découvrir</h2>
-    <div class="gold-line"></div>
-    <p>Découvrez nos pièces et trouvez le modèle qui vous ressemble.</p>
+<section class="showcase">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Sélection KEANA</div>
+      <h2>La vitrine <span class="gold">du moment</span></h2>
+      <p>Découvrez nos pièces favorites. Touchez une photo pour l’agrandir.</p>
+    </div>
+    <div class="museum-window">
+      <div class="museum-track" id="museumTrack"></div>
+    </div>
   </div>
-
-  <div class="museum" aria-label="Défilé de vêtements">
-    <div class="museum-track" id="museumTrack"></div>
-  </div>
-
-  <div class="section-heading" style="margin-top:20px">
-    <h2>La collection</h2>
-    <div class="gold-line"></div>
-  </div>
-
-  <div class="category-row">
-    <button class="category-btn active" data-filter="Tous">Tout voir</button>
-    <button class="category-btn" data-filter="Chemise">Chemises</button>
-    <button class="category-btn" data-filter="Tunique">Tuniques</button>
-  </div>
-
-  <div class="products" id="products"></div>
 </section>
 
-<section class="about">
-  <div class="section about-inner">
-    <div class="eyebrow">Notre signature</div>
-    <h2>Votre style, votre identité.</h2>
-    <div class="gold-line"></div>
-    <p>
-      KEANA SHOP met à l'honneur le style masculin à travers une sélection
-      de chemises et de tuniques pour affirmer votre allure. Choisissez les
-      pièces qui correspondent à votre personnalité.
-    </p>
+<section class="catalog" id="collection">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Notre sélection</div>
+      <h2>La collection <span class="gold">KEANA SHOP</span></h2>
+      <p>Choisissez votre modèle et commandez directement sur WhatsApp.</p>
+    </div>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="Tous">Tout voir</button>
+      <button class="filter-btn" data-filter="Chemises">Chemises</button>
+      <button class="filter-btn" data-filter="Tuniques">Tuniques</button>
+    </div>
+    <div class="products" id="products"></div>
+  </div>
+</section>
+
+<section class="about" id="apropos">
+  <div class="container about-box">
+    <div class="eyebrow">Notre univers</div>
+    <h2>Le style qui vous <span class="gold-dark">ressemble</span></h2>
+    <p>Chez <strong>KEANA SHOP</strong>, nous croyons que chaque vêtement exprime une identité. Nous sélectionnons des chemises et des tuniques pour vous accompagner avec élégance, simplicité et caractère.</p>
+    <p><strong>KEANA SHOP — Votre style, votre identité.</strong></p>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="eyebrow">Nous sommes à votre écoute</div>
-  <h2>Un modèle vous plaît ?</h2>
-  <p>
-    Contactez-nous sur WhatsApp pour commander<br>
-    ou demander des informations sur les tailles.
-  </p>
-  <a class="btn btn-gold"
+  <div class="container">
+    <div class="eyebrow">Restons en contact</div>
+    <h2>Une commande en quelques clics</h2>
+    <p>Contactez-nous sur WhatsApp pour commander votre modèle<br>et nous demander les tailles disponibles.</p>
+    <a class="btn btn-gold" href="https://wa.me/2250702004038" target="_blank" rel="noopener">COMMANDER SUR WHATSAPP</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>KEANA SHOP</strong><br>
+  Votre style, votre identité.<br>
+  © <span id="year"></span> KEANA SHOP — Tous droits réservés.
+</footer>
+
+<audio id="siteMusic" loop preload="none">
+  <source src="photos/musique%20KEANA%20SHOP.mp3" type="audio/mpeg">
+</audio>
+<button class="music-button" id="musicButton" type="button">♫ Écouter la musique</button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo du produit">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer" type="button">&times;</button>
+  <img id="lightboxImage" src="" alt="Photo agrandie du produit">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+const SITE_URL = "https://keanashop.github.io/KEANA-SHOP/";
+const WHATSAPP_NUMBER = "2250702004038";
+
+const productsData = [
+  {
+    name:"Chemise sans col blanche à motifs marron",
+    price:7500, category:"Chemises",
+    image:"photos/banniere-chemise-blanche-motif-marron.png"
+  },
+  {
+    name:"Chemise sans col blanche à motifs verts",
+    price:7500, category:"Chemises",
+    image:"photos/banniere-chemise-blanche-motifs-verts.png"
+  },
+  {
+    name:"Chemise bleu marine",
+    price:9000, category:"Chemises",
+    image:"photos/banniere-chemise-bleu-marine.png"
+  },
+  {
+    name:"Chemise bleue à motifs",
+    price:9000, category:"Chemises",
+    image:"photos/banniere-chemise-bleue-motifs.png"
+  },
+  {
+    name:"Chemise bordeaux",
+    price:9000, category:"Chemises",
+    image:"photos/banniere-chemise-bordeaux.png"
+  },
+  {
+    name:"Tunique bleu ciel",
+    price:15000, category:"Tuniques",
+    image:"photos/banniere-tunique-bleu-ciel.png"
+  },
+  {
+    name:"Tunique ivoire",
+    price:15000, category:"Tuniques",
+    image:"photos/banniere-tunique-ivoire.png"
+  },
+  {
+    name:"Tunique jaune",
+    price:15000, category:"Tuniques",
+    image:"photos/banniere-tunique-jaune.png"
+  },
+  {
+    name:"Tunique terracotta",
+    price:15000, category:"Tuniques",
+    image:"photos/banniere-tunique-terracotta.png"
+  },
+  {
+    name:"Chemise blanche manches courtes à poches noires",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-blanche-manches-courtes-poches-noires.png"
+  },
+  {
+    name:"Chemise bordeaux à détails blancs",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-bordeaux-details-blancs.png"
+  },
+  {
+    name:"Chemise blanche à motifs noirs et verts",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-blanche-motifs-noirs-et-verts.png"
+  },
+  {
+    name:"Chemise blanche à motifs marron manches longues",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-blanche-motifs-marron-manches-longues.png"
+  },
+  {
+    name:"Chemise blanche à détails noirs manches longues",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-blanche-details-noirs-manches-longues.png"
+  },
+  {
+    name:"Chemise vert olive à détails rouges",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-vert-olive-details-rouges.png"
+  },
+  {
+    name:"Chemise bleu royal à motifs marron",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-bleu-royal-motifs-marron.png"
+  },
+  {
+    name:"Chemise marron à détails clairs",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-marron-details-clairs.png"
+  },
+  {
+    name:"Chemise bleu marine à détails blancs",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-bleu-marine-details-blancs.png"
+  },
+  {
+    name:"Chemise bleu marine classique",
+    price:9000, category:"Chemises",
+    image:"photos/chemise-bleu-marine-classique.png"
+  }
+];
+
+function formatPrice(price) {
+  return price.toLocaleString("fr-FR") + " FCFA";
+}
+
+function imageUrl(path) {
+  return new URL(path, SITE_URL).href;
+}
+
+function orderProduct(product) {
+  const photoLink = imageUrl(product.image);
+  const message =
+    "Bonjour KEANA SHOP ! Je souhaite commander ce produit :\n" +
+    "Produit : " + product.name + "\n" +
+    "Prix : " + formatPrice(product.price) + "\n" +
+    "Photo du produit : " + photoLink + "\n" +
+    "Quelles tailles sont disponibles, s'il vous plaît ?";
+  const url = "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}
+
+function openLightbox(product) {
+  const box = document.getElementById("lightbox");
+  document.getElementById("lightboxImage").src = imageUrl(product.image);
+  document.getElementById("lightboxImage").alt = product.name;
+  document.getElementById("lightboxCaption").textContent =
+    product.name + " — " + formatPrice(product.price);
+  box.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("open");
+  document.getElementById("lightboxImage").src = "";
+  document.body.style.overflow = "";
+}
+
+document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+document.getElementById("lightbox").addEventListener("click", function(event) {
+  if (event.target === this) closeLightbox();
+});
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") closeLightbox();
+});
+
+function makeProductImage(product, className) {
+  const img = document.createElement("img");
+  img.className = className;
+  img.src = product.image;
+  img.alt = product.name;
+  img.loading = "lazy";
+  img.decoding = "async";
+  img.addEventListener("click", function() {
+    openLightbox(product);
+  });
+  img.addEventListener("error", function() {
+    this.alt = "Photo indisponible : " + product.name;
+    this.style.objectFit = "contain";
+    this.style.padding = "20px";
+    this.style.background = "#e8dfd0";
+  });
+  return img;
+}
+
+function renderMuseum() {
+  const track = document.getElementById("museumTrack");
+  track.innerHTML = "";
+
+  [...productsData, ...productsData].forEach(function(product) {
+    const item = document.createElement("article");
+    item.className = "mini-item";
+    item.appendChild(makeProductImage(product, ""));
+    const title = document.createElement("h3");
+    title.textContent = product.name;
+    const price = document.createElement("p");
+    price.textContent = formatPrice(product.price);
+    item.append(title, price);
+    track.appendChild(item);
+  });
+}
+
+function renderProducts(filter = "Tous") {
+  const container = document.getElementById("products");
+  container.innerHTML = "";
+
+  const list = filter === "Tous"
+    ? productsData
+    : productsData.filter(function(product) {
+        return product.category === filter;
+      });
+
+  list.forEach(function(product) {
+    const card = document.createElement("article");
+    card.className = "product-card";
+
+    const imageWrap = document.createElement("div");
+    imageWrap.className = "product-image-wrap";
+    imageWrap.appendChild(makeProductImage(product, "product-image"));
+
+    const info = document.createElement("div");
+    info.className = "product-info";
+
+    const category = document.createElement("div");
+    category.className = "product-category";
+    category.textContent = product.category;
+
+    const title = document.createElement("h3");
+    title.textContent = product.name;
+
+    const price = document.createElement("p");
+    price.className = "price";
+    price.textContent = formatPrice(product.price);
+
+    const button = document.createElement("button");
+    button.className = "order-btn";
+    button.type = "button";
+    button.textContent = "COMMANDER SUR WHATSAPP";
+    button.addEventListener("click", function() {
+      orderProduct(product);
+    });
+
+    info.append(category, title, price, button);
+    card.append(imageWrap, info);
+    container.appendChild(card);
+  });
+}
+
+document.querySelectorAll(".filter-btn").forEach(function(button) {
+  button.addEventListener("click", function() {
+    document.querySelectorAll(".filter-btn").forEach(function(item) {
+      item.classList.remove("active");
+    });
+    this.classList.add("active");
+    renderProducts(this.dataset.filter);
+  });
+});
+
+let currentSlide = 0;
+const slides = document.querySelectorAll(".hero-slide");
+setInterval(function() {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+}, 5000);
+
+const music = document.getElementById("siteMusic");
+const musicButton = document.getElementById("musicButton");
+
+musicButton.addEventListener("click", async function() {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicButton.textContent = "♫ Mettre en pause";
+    } catch (error) {
+      musicButton.textContent = "Musique indisponible";
+    }
+  } else {
+    music.pause();
+    musicButton.textContent = "♫ Écouter la musique";
+  }
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderMuseum();
+renderProducts();
+</script>
+</body>
+</html>
