@@ -6,404 +6,517 @@
 <meta name="theme-color" content="#fffaf1">
 <title>KEANA SHOP — Votre style, votre identité</title>
 <meta name="description" content="Découvrez la collection masculine KEANA SHOP : chemises et tuniques.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --ivory:#fffaf1;
-  --beige:#eee1ce;
-  --black:#171512;
-  --gold:#d4af37;
-  --gold-dark:#8d6716;
-  --text:#302b24;
+  --ivory: #fffaf1;
+  --beige: #eee1ce;
+  --black: #171512;
+  --gold: #d4af37;
+  --gold-dark: #8d6716;
+  --text: #302b24;
 }
 
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  margin:0;
-  font-family:Montserrat,Arial,sans-serif;
-  background:var(--ivory);
-  color:var(--text);
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  background: var(--ivory);
+  color: var(--text);
 }
-a { text-decoration:none; color:inherit; }
-button { font-family:inherit; }
-img { display:block; max-width:100%; }
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }
+img { display: block; max-width: 100%; }
 
 .gold-text {
-  background:linear-gradient(110deg,#8d6716,#fff0a6,#c49a2c,#fff4bd,#946710);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+  background: linear-gradient(110deg, #8d6716, #fff0a6, #c49a2c, #fff4bd, #946710);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .topbar {
-  padding:10px;
-  text-align:center;
-  background:var(--black);
-  color:#f6df92;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
+  padding: 10px;
+  text-align: center;
+  background: var(--black);
+  color: #f6df92;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 header {
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(255,250,241,.96);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid #e5d5b4;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,250,241,.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5d5b4;
 }
+
 .nav {
-  max-width:1200px;
-  min-height:70px;
-  padding:12px 20px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
+  max-width: 1200px;
+  min-height: 70px;
+  padding: 12px 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
+
 .logo {
-  font-family:"Playfair Display",serif;
-  font-size:23px;
-  font-weight:700;
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  font-weight: 700;
 }
+
 .nav-links {
-  display:flex;
-  gap:17px;
-  font-size:10px;
-  font-weight:800;
+  display: flex;
+  gap: 17px;
+  font-size: 10px;
+  font-weight: 800;
 }
-.nav-links a:hover { color:var(--gold-dark); }
 
-/* BANNIÈRE ANIMÉE */
+.nav-links a:hover { color: var(--gold-dark); }
+
 .hero {
-  min-height:570px;
-  position:relative;
-  overflow:hidden;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  color:white;
-  background:#493a2b;
+  min-height: 570px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  background: #493a2b;
 }
-.hero-slides,
+
+.hero-slides, .hero-slide {
+  position: absolute;
+  inset: 0;
+}
+
 .hero-slide {
-  position:absolute;
-  inset:0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center 38%;
+  background-repeat: no-repeat;
+  transform: scale(1.1);
+  transition: opacity 1.3s ease;
+  animation: slowZoom 8s ease-in-out infinite alternate;
 }
-.hero-slide {
-  opacity:0;
-  background-size:cover;
-  background-position:center 38%;
-  background-repeat:no-repeat;
-  transform:scale(1.10);
-  transition:opacity 1.3s ease;
-  animation:slowZoom 8s ease-in-out infinite alternate;
-}
-.hero-slide.active { opacity:1; }
+
+.hero-slide.active { opacity: 1; }
+
 .hero-slide::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(0,0,0,.63),rgba(0,0,0,.17),rgba(0,0,0,.53));
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.63),
+    rgba(0,0,0,.17),
+    rgba(0,0,0,.53)
+  );
 }
+
 @keyframes slowZoom {
-  from { transform:scale(1.02); }
-  to { transform:scale(1.13); }
+  from { transform: scale(1.02); }
+  to { transform: scale(1.13); }
 }
+
 .hero-content {
-  position:relative;
-  z-index:2;
-  width:min(700px,100%);
-  padding:50px 20px;
-  text-shadow:0 2px 15px rgba(0,0,0,.4);
+  position: relative;
+  z-index: 2;
+  width: min(700px, 100%);
+  padding: 50px 20px;
+  text-shadow: 0 2px 15px #0006;
 }
+
 .eyebrow {
-  font-size:10px;
-  letter-spacing:4px;
-  text-transform:uppercase;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
+
 .hero h1 {
-  margin:18px 0 12px;
-  font-family:"Playfair Display",serif;
-  font-size:clamp(43px,9vw,82px);
-  line-height:1.05;
+  margin: 18px 0 12px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(43px, 9vw, 82px);
+  line-height: 1.05;
 }
+
 .hero p {
-  margin:20px 0 28px;
-  font-size:12px;
-  letter-spacing:2px;
-  line-height:1.9;
+  margin: 20px 0 28px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1.9;
 }
+
 .btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:0;
-  border-radius:3px;
-  padding:14px 20px;
-  cursor:pointer;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  transition:transform .2s,box-shadow .2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 3px;
+  padding: 14px 20px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform .2s, box-shadow .2s;
 }
+
 .btn:hover {
-  transform:translateY(-2px);
-  box-shadow:0 7px 20px #0002;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px #0002;
 }
+
 .btn-gold {
-  color:#241b08;
-  background:linear-gradient(115deg,#986c12,#fff0a6,#c49a2c,#fff3b5,#946710);
-  border:1px solid #f4dc86;
-  box-shadow:0 4px 18px #c59a2d35;
+  color: #241b08;
+  background: linear-gradient(115deg, #986c12, #fff0a6, #c49a2c, #fff3b5, #946710);
+  border: 1px solid #f4dc86;
+  box-shadow: 0 4px 18px #c59a2d35;
 }
-.btn-black { background:var(--black); color:#ffedaa; }
 
-/* COLLECTION ET DÉFILÉ */
 .section {
-  max-width:1200px;
-  padding:65px 18px;
-  margin:auto;
+  max-width: 1200px;
+  padding: 65px 18px;
+  margin: auto;
 }
-.section-heading {
-  text-align:center;
-  margin-bottom:30px;
-}
-.section-heading .eyebrow { color:var(--gold-dark); }
-.section-heading h2 {
-  margin:12px 0;
-  font-family:"Playfair Display",serif;
-  font-size:clamp(30px,5vw,43px);
-  color:var(--black);
-}
-.section-heading p {
-  font-size:12px;
-  line-height:1.9;
-  color:#766b5d;
-}
-.gold-line {
-  width:65px;
-  height:3px;
-  margin:18px auto;
-  background:linear-gradient(90deg,#946710,#fff0a6,#bd8e1c,#fff0a6,#946710);
-}
-.museum {
-  overflow:hidden;
-  width:100%;
-  padding:5px 0 22px;
-}
-.museum-track {
-  display:flex;
-  width:max-content;
-  gap:16px;
-  animation:museumScroll 35s linear infinite;
-}
-.museum:hover .museum-track { animation-play-state:paused; }
-.museum:focus-within .museum-track { animation-play-state:paused; }
-@keyframes museumScroll {
-  from { transform:translateX(0); }
-  to { transform:translateX(-50%); }
-}
-.mini-item {
-  width:175px;
-  flex:0 0 175px;
-  border:1px solid #e9dcc7;
-  background:white;
-  padding:8px;
-}
-.mini-item img {
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  background:#eee1ce;
-}
-.mini-item strong {
-  display:block;
-  margin:10px 2px 5px;
-  font-size:10px;
-  line-height:1.5;
-}
-.mini-item span {
-  display:block;
-  margin:0 2px 7px;
-  font-size:12px;
-  font-weight:800;
-}
-.mini-item:hover { border-color:var(--gold); }
 
-/* CATALOGUE */
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading .eyebrow { color: var(--gold-dark); }
+
+.section-heading h2 {
+  margin: 12px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 5vw, 43px);
+  color: var(--black);
+}
+
+.section-heading p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #766b5d;
+}
+
+.gold-line {
+  width: 65px;
+  height: 3px;
+  margin: 18px auto;
+  background: linear-gradient(90deg, #946710, #fff0a6, #bd8e1c, #fff0a6, #946710);
+}
+
+.museum {
+  overflow: hidden;
+  width: 100%;
+  padding: 5px 0 22px;
+}
+
+.museum-track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  animation: museumScroll 35s linear infinite;
+}
+
+.museum:hover .museum-track,
+.museum:focus-within .museum-track {
+  animation-play-state: paused;
+}
+
+@keyframes museumScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.mini-item {
+  width: 175px;
+  flex: 0 0 175px;
+  border: 1px solid #e9dcc7;
+  background: white;
+  padding: 8px;
+}
+
+.mini-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #eee1ce;
+}
+
+.mini-item strong {
+  display: block;
+  margin: 10px 2px 5px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.mini-item span {
+  display: block;
+  margin: 0 2px 7px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .category-row {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:9px;
-  margin:25px 0 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 25px 0 30px;
 }
+
 .category-btn {
-  border:1px solid #d8c7a5;
-  background:transparent;
-  padding:11px 17px;
-  font-size:10px;
-  font-weight:800;
-  cursor:pointer;
+  border: 1px solid #d8c7a5;
+  background: transparent;
+  padding: 11px 17px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
 }
+
 .category-btn.active,
 .category-btn:hover {
-  background:var(--black);
-  color:#f7df8c;
-  border-color:var(--black);
+  background: var(--black);
+  color: #f7df8c;
+  border-color: var(--black);
 }
+
 .products {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
+
 .product-card {
-  overflow:hidden;
-  background:white;
-  border:1px solid #eee3d1;
-  transition:transform .25s,box-shadow .25s;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #eee3d1;
+  transition: transform .25s, box-shadow .25s;
 }
+
 .product-card:hover {
-  transform:translateY(-4px);
-  box-shadow:0 12px 28px #43301018;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #43301018;
 }
+
 .product-image {
-  aspect-ratio:4/4.6;
-  background:#f1e8da;
-  overflow:hidden;
+  aspect-ratio: 4 / 4.6;
+  background: #f1e8da;
+  overflow: hidden;
+  cursor: zoom-in;
 }
+
 .product-image img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .4s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
 }
-.product-card:hover .product-image img { transform:scale(1.04); }
-.product-info { padding:16px; }
+
+.product-card:hover .product-image img {
+  transform: scale(1.04);
+}
+
+.product-info { padding: 16px; }
+
 .product-category {
-  color:var(--gold-dark);
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
+  color: var(--gold-dark);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
+
 .product-info h3 {
-  min-height:40px;
-  margin:10px 0;
-  font-size:12px;
-  line-height:1.6;
+  min-height: 40px;
+  margin: 10px 0;
+  font-size: 12px;
+  line-height: 1.6;
 }
+
 .price {
-  margin:12px 0;
-  color:var(--black);
-  font-size:18px;
-  font-weight:800;
+  margin: 12px 0;
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 800;
 }
+
 .product-info .btn {
-  width:100%;
-  padding:13px 6px;
-  font-size:9px;
+  width: 100%;
+  padding: 13px 6px;
+  font-size: 9px;
 }
 
-/* MARQUE */
 .about {
-  background:var(--beige);
-  text-align:center;
+  background: var(--beige);
+  text-align: center;
 }
-.about-inner { max-width:760px; }
+
+.about-inner { max-width: 760px; }
+
 .about h2 {
-  font-family:"Playfair Display",serif;
-  font-size:35px;
-  color:var(--black);
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  color: var(--black);
 }
+
 .about p {
-  color:#5e5549;
-  font-size:12px;
-  line-height:2;
+  color: #5e5549;
+  font-size: 12px;
+  line-height: 2;
 }
 
-/* CONTACT */
 .contact {
-  padding:55px 20px;
-  background:var(--black);
-  color:white;
-  text-align:center;
+  padding: 55px 20px;
+  background: var(--black);
+  color: white;
+  text-align: center;
 }
+
 .contact h2 {
-  font-family:"Playfair Display",serif;
-  font-size:32px;
-  color:#f6dc87;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  color: #f6dc87;
 }
+
 .contact p {
-  color:#eee0c4;
-  font-size:12px;
-  line-height:1.9;
+  color: #eee0c4;
+  font-size: 12px;
+  line-height: 1.9;
 }
+
 footer {
-  padding:23px 12px;
-  text-align:center;
-  background:#100f0d;
-  color:#cfc2a7;
-  font-size:10px;
-  line-height:2;
-  letter-spacing:1px;
+  padding: 23px 12px;
+  text-align: center;
+  background: #100f0d;
+  color: #cfc2a7;
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: 1px;
 }
 
-/* MUSIQUE */
 .music-button {
-  position:fixed;
-  z-index:40;
-  right:14px;
-  bottom:16px;
-  border:1px solid #f5df8e;
-  border-radius:40px;
-  padding:13px 16px;
-  background:linear-gradient(115deg,#986c12,#fff0a6,#c49a2c,#fff3b5,#946710);
-  color:#241b08;
-  font-size:10px;
-  font-weight:800;
-  box-shadow:0 5px 18px #0003;
-  cursor:pointer;
+  position: fixed;
+  z-index: 40;
+  right: 14px;
+  bottom: 16px;
+  border: 1px solid #f5df8e;
+  border-radius: 40px;
+  padding: 13px 16px;
+  background: linear-gradient(115deg, #986c12, #fff0a6, #c49a2c, #fff3b5, #946710);
+  color: #241b08;
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 5px 18px #0003;
+  cursor: pointer;
 }
 
-@media(max-width:760px) {
-  .nav { min-height:62px; padding:10px 13px; }
-  .logo { font-size:19px; }
-  .nav-links { gap:10px; font-size:9px; }
-  .hero { min-height:490px; }
-  .hero-slide { background-position:center center; }
-  .section { padding:48px 13px; }
-  .products { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .product-info { padding:11px; }
-  .product-info h3 { font-size:11px; }
-  .price { font-size:15px; }
-  .product-info .btn { letter-spacing:.2px; }
-  .mini-item { width:145px; flex-basis:145px; }
-  .mini-item img { height:155px; }
+/* Agrandissement des photos */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(0,0,0,.93);
 }
-@media(max-width:360px) {
-  .products { grid-template-columns:1fr; }
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: min(92vw, 700px);
+  max-height: 72vh;
+  object-fit: contain;
+  border: 1px solid #d4af37;
 }
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    scroll-behavior:auto !important;
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;
+
+.lightbox-title {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.lightbox-price {
+  color: #f6dc87;
+  font-weight: 800;
+}
+
+.lightbox-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lightbox button {
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  padding: 11px 14px;
+  background: #171512;
+  color: #f6dc87;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lightbox .close-lightbox {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 26px;
+  padding: 5px 13px;
+}
+
+@media (max-width: 760px) {
+  .nav { min-height: 62px; padding: 10px 13px; }
+  .logo { font-size: 19px; }
+  .nav-links { gap: 10px; font-size: 9px; }
+  .hero { min-height: 490px; }
+  .hero-slide { background-position: center center; }
+  .section { padding: 48px 13px; }
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .product-info { padding: 11px; }
+  .product-info h3 { font-size: 11px; }
+  .price { font-size: 15px; }
+  .product-info .btn { letter-spacing: .2px; }
+  .mini-item { width: 145px; flex-basis: 145px; }
+  .mini-item img { height: 155px; }
+}
+
+@media (max-width: 360px) {
+  .products { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
   }
 }
 </style>
 </head>
 
 <body>
+
 <div class="topbar">KEANA SHOP · Votre style, votre identité</div>
 
 <header>
@@ -418,13 +531,11 @@ footer {
 
 <section class="hero" aria-label="Présentation de KEANA SHOP">
   <div class="hero-slides" aria-hidden="true">
-    <div class="hero-slide active"
-      style="background-image:url('photos/banniere-look-terracotta-assis.png')"></div>
-    <div class="hero-slide"
-      style="background-image:url('photos/banniere-chemise-blanche-motifs-verts.png')"></div>
-    <div class="hero-slide"
-      style="background-image:url('photos/banniere-tunique-ivoire.png')"></div>
+    <div class="hero-slide active" style="background-image:url('photos/banniere-look-terracotta-assis.png')"></div>
+    <div class="hero-slide" style="background-image:url('photos/banniere-chemise-blanche-motifs-verts.png')"></div>
+    <div class="hero-slide" style="background-image:url('photos/banniere-tunique-ivoire.png')"></div>
   </div>
+
   <div class="hero-content">
     <div class="eyebrow">L'élégance au masculin</div>
     <h1>KEANA <span class="gold-text">SHOP</span></h1>
@@ -466,8 +577,8 @@ footer {
     <div class="gold-line"></div>
     <p>
       KEANA SHOP met à l'honneur le style masculin à travers une sélection
-      de chemises et de tuniques pour affirmer votre allure.
-      Choisissez les pièces qui correspondent à votre personnalité.
+      de chemises et de tuniques pour affirmer votre allure. Choisissez les
+      pièces qui correspondent à votre personnalité.
     </p>
   </div>
 </section>
@@ -475,249 +586,8 @@ footer {
 <section class="contact" id="contact">
   <div class="eyebrow">Nous sommes à votre écoute</div>
   <h2>Un modèle vous plaît ?</h2>
-  <p>Contactez-nous sur WhatsApp pour commander<br>
-  ou demander des informations sur les tailles.</p>
-  <a class="btn btn-gold" href="https://wa.me/2250702004038"
-     target="_blank" rel="noopener">Nous contacter sur WhatsApp</a>
-</section>
-
-<footer>
-  <strong>KEANA SHOP</strong><br>
-  Votre style, votre identité.<br>
-  © <span id="year"></span> KEANA SHOP — Tous droits réservés.
-</footer>
-
-<audio id="shopMusic" loop preload="auto">
-  <source src="photos/musique%20KEANA%20SHOP.mp3" type="audio/mpeg">
-</audio>
-<button class="music-button" id="musicButton" type="button">♫ Activer la musique</button>
-
-<script>
-const WHATSAPP_NUMBER = "2250702004038";
-
-const products = [
-  {
-    name:"Chemise sans col blanche à motifs marron",
-    category:"Chemise", price:7500,
-    image:"photos/banniere-chemise-blanche-motif-marron.png"
-  },
-  {
-    name:"Chemise sans col blanche à motifs verts",
-    category:"Chemise", price:7500,
-    image:"photos/banniere-chemise-blanche-motifs-verts.png"
-  },
-  {
-    name:"Chemise bleu marine",
-    category:"Chemise", price:9000,
-    image:"photos/banniere-chemise-bleu-marine.png"
-  },
-  {
-    name:"Chemise bleue à motifs",
-    category:"Chemise", price:9000,
-    image:"photos/banniere-chemise-bleue-motifs.png"
-  },
-  {
-    name:"Chemise bordeaux",
-    category:"Chemise", price:9000,
-    image:"photos/banniere-chemise-bordeaux.png"
-  },
-  {
-    name:"Tunique bleu ciel",
-    category:"Tunique", price:15000,
-    image:"photos/banniere-tunique-bleu-ciel.png"
-  },
-  {
-    name:"Tunique ivoire",
-    category:"Tunique", price:15000,
-    image:"photos/banniere-tunique-ivoire.png"
-  },
-  {
-    name:"Tunique jaune",
-    category:"Tunique", price:15000,
-    image:"photos/banniere-tunique-jaune.png"
-  },
-  {
-    name:"Tunique terracotta",
-    category:"Tunique", price:15000,
-    image:"photos/banniere-tunique-terracotta.png"
-  }
-];
-
-const productsContainer = document.getElementById("products");
-const museumTrack = document.getElementById("museumTrack");
-
-function formatPrice(price) {
-  return new Intl.NumberFormat("fr-FR").format(price) + " FCFA";
-}
-
-function orderProduct(product) {
-  const message =
-    "Bonjour KEANA SHOP ! Je souhaite commander : " + product.name +
-    ", au prix de " + formatPrice(product.price) +
-    ". Merci de me préciser les tailles disponibles.";
-  window.open(
-    "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message),
-    "_blank",
-    "noopener"
-  );
-}
-
-function createMiniItem(product) {
-  const link = document.createElement("a");
-  link.className = "mini-item";
-  link.href = "#catalogue-" + products.indexOf(product);
-  link.setAttribute("aria-label", "Voir " + product.name);
-
-  const img = document.createElement("img");
-  img.src = product.image;
-  img.alt = product.name;
-  img.loading = "lazy";
-  img.onerror = function() {
-    this.style.visibility = "hidden";
-  };
-
-  const name = document.createElement("strong");
-  name.textContent = product.name;
-
-  const price = document.createElement("span");
-  price.textContent = formatPrice(product.price);
-
-  link.append(img, name, price);
-  return link;
-}
-
-function renderMuseum() {
-  museumTrack.replaceChildren();
-
-  // Deux copies permettent un défilement en boucle.
-  [...products, ...products].forEach(product => {
-    museumTrack.appendChild(createMiniItem(product));
-  });
-}
-
-function renderProducts(filter = "Tous") {
-  productsContainer.replaceChildren();
-
-  const filtered = products.filter(product =>
-    filter === "Tous" || product.category === filter
-  );
-
-  filtered.forEach(product => {
-    const originalIndex = products.indexOf(product);
-
-    const card = document.createElement("article");
-    card.className = "product-card";
-    card.id = "catalogue-" + originalIndex;
-
-    const imageBox = document.createElement("div");
-    imageBox.className = "product-image";
-
-    const img = document.createElement("img");
-    img.src = product.image;
-    img.alt = product.name;
-    img.loading = "lazy";
-    img.onerror = function() {
-      this.alt = "Photo indisponible : " + product.name;
-      this.style.opacity = "0";
-      imageBox.style.background = "#eee1ce";
-    };
-    imageBox.appendChild(img);
-
-    const info = document.createElement("div");
-    info.className = "product-info";
-
-    const category = document.createElement("div");
-    category.className = "product-category";
-    category.textContent = product.category;
-
-    const title = document.createElement("h3");
-    title.textContent = product.name;
-
-    const price = document.createElement("div");
-    price.className = "price";
-    price.textContent = formatPrice(product.price);
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "btn btn-gold";
-    button.textContent = "Commander sur WhatsApp";
-    button.addEventListener("click", () => orderProduct(product));
-
-    info.append(category, title, price, button);
-    card.append(imageBox, info);
-    productsContainer.appendChild(card);
-  });
-}
-
-document.querySelectorAll(".category-btn").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".category-btn").forEach(item =>
-      item.classList.remove("active")
-    );
-    button.classList.add("active");
-    renderProducts(button.dataset.filter);
-  });
-});
-
-// Diaporama automatique de la bannière.
-const slides = [...document.querySelectorAll(".hero-slide")];
-let currentSlide = 0;
-
-if (slides.length > 1) {
-  setInterval(() => {
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-  }, 6000);
-}
-
-// Musique : tentative de lecture au chargement.
-// Les navigateurs peuvent bloquer cette lecture jusqu'à une interaction.
-const music = document.getElementById("shopMusic");
-const musicButton = document.getElementById("musicButton");
-
-function updateMusicButton() {
-  musicButton.textContent = music.paused
-    ? "♫ Activer la musique"
-    : "♫ Couper la musique";
-}
-
-async function startMusic() {
-  try {
-    await music.play();
-    updateMusicButton();
-  } catch (error) {
-    updateMusicButton();
-  }
-}
-
-musicButton.addEventListener("click", async () => {
-  if (music.paused) {
-    await startMusic();
-  } else {
-    music.pause();
-    updateMusicButton();
-  }
-});
-
-// Essai automatique au chargement de la page.
-window.addEventListener("load", () => {
-  startMusic();
-});
-
-// Démarrer la musique au premier toucher de la page.
-document.addEventListener("pointerdown", function firstInteraction(event) {
-  if (event.target.closest("#musicButton")) return;
-
-  if (music.paused) {
-    startMusic();
-  }
-}, { once: true, capture: true });
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-renderMuseum();
-renderProducts();
-</script>
-</body>
-</html>
+  <p>
+    Contactez-nous sur WhatsApp pour commander<br>
+    ou demander des informations sur les tailles.
+  </p>
+  <a class="btn btn-gold"
